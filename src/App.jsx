@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -8,26 +6,39 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      {/* NavBar */}
+      <nav style={{
+        backgroundColor: '#242424',
+        padding: '1rem',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        color: 'white'
+      }}>
+        <h2 🚀 My React App style={{
+          display : 'inline',
+        }}> </h2>
+        <div>
+
+        <ul style={{
+          listStyle: 'none',
+          display: 'flex',
+          gap: '1.5rem',
+          margin: 0,
+          padding: 0
+        }}>
+          <li><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Home</a></li>
+          <li><a href="#" style={{ color: 'white', textDecoration: 'none' }}>About</a></li>
+          <li><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Contact</a></li>
+        </ul>
+        </div>
+      </nav>
+
+      <div style={{ padding: '2rem' }}>        
+        <button onClick={() => setCount(count + 1)}>
+          You clicked {count} times
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
