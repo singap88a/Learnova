@@ -1,33 +1,9 @@
 import React from 'react';
 import CourseCard from '../Courses/CourseCard';
+import coursesData from '../../data/courses.json';
 
 const CoursesSection = () => {
-  const courses = [
-    {
-      id: 1,
-      title: 'Web Development Fundamentals',
-      description: 'Learn HTML, CSS, and JavaScript to build modern websites from scratch.',
-      instructor: 'Sarah Johnson',
-      duration: '8 weeks',
-      price: 99
-    },
-    {
-      id: 2,
-      title: 'Data Science with Python',
-      description: 'Master data analysis, visualization, and machine learning with Python.',
-      instructor: 'Dr. Michael Chen',
-      duration: '12 weeks',
-      price: 149
-    },
-    {
-      id: 3,
-      title: 'Mobile App Development',
-      description: 'Build cross-platform mobile applications using React Native.',
-      instructor: 'Alex Rodriguez',
-      duration: '10 weeks',
-      price: 129
-    }
-  ];
+  const courses = coursesData.courses.slice(0, 3); // Show first 3 courses
 
   return (
     <section className="py-16 bg-white">
