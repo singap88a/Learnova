@@ -11,7 +11,8 @@ import Instructors from './pages/Instructors/Instructors';
 import InstructorDetails from './pages/Instructors/InstructorDetails';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
-
+import Login from './pages/Login/index.jsx';
+import SignUp from './pages/SignUP/index.jsx';
 function App() {
   return (
     <Router>
