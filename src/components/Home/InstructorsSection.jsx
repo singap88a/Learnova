@@ -1,27 +1,9 @@
 import React from 'react';
 import InstructorCard from '../Instructors/InstructorCard';
+import coursesData from '../../data/courses.json';
 
 const InstructorsSection = () => {
-  const instructors = [
-    {
-      id: 1,
-      name: 'Sarah Johnson',
-      title: 'Senior Web Developer',
-      bio: '10+ years of experience in full-stack web development. Expert in React, Node.js, and cloud technologies.'
-    },
-    {
-      id: 2,
-      name: 'Dr. Michael Chen',
-      title: 'Data Science Professor',
-      bio: 'PhD in Statistics with 15 years of experience in machine learning and big data analytics.'
-    },
-    {
-      id: 3,
-      name: 'Alex Rodriguez',
-      title: 'Mobile App Architect',
-      bio: 'Former Google engineer specializing in cross-platform mobile development and app architecture.'
-    }
-  ];
+  const instructors = coursesData.instructors.slice(0, 3); // Show first 3 instructors
 
   return (
     <section className="py-16 bg-secondary">
