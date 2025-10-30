@@ -8,6 +8,7 @@ import Divider from "@mui/material/Divider";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
 import Link from "@mui/material/Link";
+import { Link as RouterLink } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
@@ -16,6 +17,14 @@ import { styled } from "@mui/material/styles";
 import ForgotPassword from "./components/ForgotPassword.jsx";
 import AppTheme from "../../shared-theme/AppTheme.jsx";
 import ColorModeSelect from "../../shared-theme/ColorModeSelect.jsx";
+import { useNavigate } from "react-router-dom";
+
+import {
+  signInWithGoogle,
+  signInWithFacebook,
+  signInWithEmail,
+} from "../../Services/authService.jsx";
+
 import {
   GoogleIcon,
   FacebookIcon,
@@ -70,6 +79,7 @@ export default function SignIn(props) {
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -79,16 +89,24 @@ export default function SignIn(props) {
     setOpen(false);
   };
 
-  const handleSubmit = (event) => {
-    if (emailError || passwordError) {
-      event.preventDefault();
-      return;
-    }
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // prevent reload
+    if (!validateInputs()) return;
+
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const email = data.get("email");
+    const password = data.get("password");
+
+    try {
+      const result = await signInWithEmail(email, password);
+      console.log("User signed in:", result.user);
+      alert(`Welcome back, ${result.user.email}!`);
+      // 👉 You can redirect using react-router here if needed
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Login failed:", error.message);
+      alert(error.message);
+    }
   };
 
   const validateInputs = () => {
@@ -188,10 +206,11 @@ export default function SignIn(props) {
               type="submit"
               fullWidth
               variant="contained"
-              onClick={validateInputs}
+              onClick={handleSubmit}
             >
               Sign in
             </Button>
+
             <Link
               component="button"
               type="button"
@@ -207,7 +226,7 @@ export default function SignIn(props) {
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert("Sign in with Google")}
+              onClick={signInWithGoogle}
               startIcon={<GoogleIcon />}
             >
               Sign in with Google
@@ -215,20 +234,19 @@ export default function SignIn(props) {
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert("Sign in with Facebook")}
+              onClick={signInWithFacebook}
               startIcon={<FacebookIcon />}
             >
               Sign in with Facebook
             </Button>
             <Typography sx={{ textAlign: "center" }}>
               Don&apos;t have an account?{" "}
-              <Link
-                href="/material-ui/getting-started/templates/sign-in/"
-                variant="body2"
-                sx={{ alignSelf: "center" }}
+              <RouterLink
+                to="/sign-up"
+                className="text-blue-600 underline hover:text-blue-800 hover:no-underline"
               >
                 Sign up
-              </Link>
+              </RouterLink>
             </Typography>
           </Box>
         </Card>

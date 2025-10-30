@@ -20,7 +20,11 @@ import {
   FacebookIcon,
   SitemarkIcon,
 } from "./components/CustomIcons";
-
+import {
+  signUpWithEmail,
+  signInWithGoogle,
+  signInWithFacebook,
+} from "../../Services/authService.jsx";
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -41,7 +45,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
 }));
 
 const SignUpContainer = styled(Stack)(({ theme }) => ({
-  height: "calc((1 - var(--template-frame-height, 0)) * 100dvh)",
+  
   minHeight: "100%",
   padding: theme.spacing(2),
   [theme.breakpoints.up("sm")]: {
@@ -108,22 +112,33 @@ export default function SignUp(props) {
     return isValid;
   };
 
-  const handleSubmit = (event) => {
-    if (nameError || emailError || passwordError) {
-      event.preventDefault();
-      return;
-    }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!validateInputs()) return;
+
     const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get("name"),
-      lastName: data.get("lastName"),
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const name = data.get("name");
+    const email = data.get("email");
+    const password = data.get("password");
+
+    try {
+      const result = await signUpWithEmail(email, password);
+
+      // Update display name
+      await result.user.updateProfile({ displayName: name });
+
+      console.log("User signed up:", result.user);
+      alert(`Welcome ${name}! Account created successfully.`);
+      // You can redirect after signup:
+      // navigate("/dashboard");
+    } catch (error) {
+      console.error("Sign up failed:", error.message);
+      alert(error.message);
+    }
   };
 
   return (
-    <AppTheme {...props} >
+    <AppTheme {...props}>
       <CssBaseline enableColorScheme />
       <ColorModeSelect sx={{ position: "fixed", top: "1rem", right: "1rem" }} />
       <SignUpContainer direction="column" justifyContent="space-between">
@@ -139,7 +154,13 @@ export default function SignUp(props) {
           <Box
             component="form"
             onSubmit={handleSubmit}
-            sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              gap: 1,
+              
+            }}
           >
             <FormControl>
               <FormLabel htmlFor="name">Full name</FormLabel>
@@ -206,26 +227,23 @@ export default function SignUp(props) {
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert("Sign up with Google")}
+              onClick={signInWithGoogle}
               startIcon={<GoogleIcon />}
             >
               Sign up with Google
             </Button>
+
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert("Sign up with Facebook")}
+              onClick={signInWithFacebook}
               startIcon={<FacebookIcon />}
             >
               Sign up with Facebook
             </Button>
             <Typography sx={{ textAlign: "center" }}>
               Already have an account?{" "}
-              <Link
-                to="/login"
-                variant="body2"
-                sx={{ alignSelf: "center" }}
-              >
+              <Link to="/login" variant="body2" sx={{ alignSelf: "center" }}>
                 Sign in
               </Link>
             </Typography>
