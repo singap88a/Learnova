@@ -5,7 +5,7 @@ import { logout } from "../Services/authService.jsx";
 const NavbarLogedIn = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useAuth();
-
+  console.log(user);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -52,7 +52,7 @@ const NavbarLogedIn = () => {
 
           {/* User Info + Logout */}
           <div className="hidden md:flex items-center space-x-4">
-            {user?.photoURL ? (
+            {/* {user?.photoURL ? (
               <img
                 src={user.photoURL}
                 alt="User Avatar"
@@ -62,7 +62,7 @@ const NavbarLogedIn = () => {
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold">
                 {user?.displayName?.charAt(0).toUpperCase() || "U"}
               </div>
-            )}
+            )} */}
             <span className="text-gray-800 font-medium">
               {user?.displayName || user?.email}
             </span>
