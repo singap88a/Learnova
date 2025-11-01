@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.Hero .Rating > p{
+display: flex;
+flex-direction: column-reverse;
+justify-content: center;
+color: #000;
+font-weight: bold;
+}
