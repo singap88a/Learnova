@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
- 
 import Home from './pages/Home/Home';
 import Courses from './pages/Courses/Courses';
 import CourseDetails from './pages/Courses/CourseDetails';
@@ -35,4 +34,7 @@ function App() {
   );
 }
 
-export default App;
+
+export default App
+
+
