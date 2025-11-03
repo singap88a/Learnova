@@ -1,7 +1,13 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/Knowledge-2.png'
 
+=======
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Logo from "../assets/Knowledge.png"
+>>>>>>> Stashed changes
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,6 +18,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<<<<<<< Updated upstream
         <div className="flex justify-between items-center h-20">
           {/* Logo and navigation links */}
             {/* Logo */}
@@ -22,6 +29,18 @@ const Navbar = () => {
                 alt="Educational Institution Logo"
               />
             </div>
+=======
+        <div className="flex justify-between h-20">
+            {/* Logo */}
+            <div className="flex-shrink-0 flex items-center">
+              <img
+                className="h-36 w-auto"
+                src={Logo}
+                alt="Educational Institution Logo"
+              />
+            </div>
+          {/* Logo and navigation links */}
+>>>>>>> Stashed changes
           <div className="flex items-center">
             {/* Navigation links - visible on medium and large screens */}
               
