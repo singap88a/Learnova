@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import CTA from "../../assets/CTA.jpg"; // ← الصورة الأصلية
+import CTA from "../../assets/CTA.jpg";
 
 const CTASection = () => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const CTASection = () => {
 
   return (
     <section className="relative py-20 text-center text-white overflow-hidden">
-      {/* خلفية الصورة */}
+      
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
