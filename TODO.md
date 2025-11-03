@@ -1,14 +1,9 @@
-# TODO List for Navbar and Signup Modifications
+# TODO: Fix Instructors Section
 
 ## Tasks
-- [x] Modify `src/components/NavbarLogedIn.jsx` to use the same navigation links as `src/components/Navbar.jsx` (Home, Courses, Instructors, About, Contact). Keep the user name and Logout button.
-- [x] Add automatic redirect to home page ("/") after successful signup in `src/pages/SignUP/index.jsx`.
-- [x] Verify that the navbar remains consistent and redirect works after signup.
+- [x] Update InstructorsSection.jsx: Add navigation to /instructors for "View All Instructors" button
+- [x] Update InstructorCard.jsx (home): Change avatar from circular gradient to full width img, add dynamic social icons using react-icons
+- [x] Update Instructors.jsx: Ensure all social icons are added dynamically using react-icons
 
-## Progress
-- [x] Understand the current code structure and requirements.
-- [x] Confirm plan with user.
-- [x] Updated NavbarLogedIn.jsx to have consistent navigation links.
-- [x] Added redirect to home page after signup.
-- [x] Started development server for testing.
-- [x] Browser tool disabled, unable to perform automated testing.
+## Followup
+- [x] Test navigation and image display - Dev server running on http://localhost:5176/

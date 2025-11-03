@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import InstructorCard from '../Instructors/InstructorCard';
 import coursesData from '../../data/courses.json';
 
 const InstructorsSection = () => {
+  const navigate = useNavigate();
   const instructors = coursesData.instructors.slice(0, 3); // Show first 3 instructors
+
+  const handleViewAll = () => {
+    navigate('/instructors');
+  };
 
   return (
     <section className="py-16 bg-secondary">
@@ -22,7 +28,10 @@ const InstructorsSection = () => {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <button className="px-8 py-3 font-semibold text-white transition duration-300 rounded-md bg-primary hover:bg-accent">
+          <button
+            onClick={handleViewAll}
+            className="px-8 py-3 font-semibold text-white transition duration-300 rounded-md bg-primary hover:bg-accent"
+          >
             View All Instructors
           </button>
         </div>

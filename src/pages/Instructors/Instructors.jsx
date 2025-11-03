@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaLinkedin, FaGithub, FaTwitter, FaYoutube, FaGlobe } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaYoutube, FaGlobe, FaDribbble, FaBehance, FaInstagram } from 'react-icons/fa';
 import coursesData from '../../data/courses.json';
 
 const socialIcons = {
@@ -11,9 +11,9 @@ const socialIcons = {
   twitter: <FaTwitter className="w-5 h-5 text-blue-400" />,
   youtube: <FaYoutube className="w-5 h-5 text-red-600" />,
   website: <FaGlobe className="w-5 h-5 text-green-600" />,
-  dribbble: <FaGlobe className="w-5 h-5 text-pink-600" />, // Assuming dribbble uses globe or add specific if needed
-  behance: <FaGlobe className="w-5 h-5 text-blue-500" />, // Assuming behance uses globe
-  instagram: <FaGlobe className="w-5 h-5 text-purple-600" /> // Assuming instagram uses globe
+  dribbble: <FaDribbble className="w-5 h-5 text-pink-600" />,
+  behance: <FaBehance className="w-5 h-5 text-blue-500" />,
+  instagram: <FaInstagram className="w-5 h-5 text-purple-600" />
 };
 
 const InstructorCard = ({ instructor }) => {
