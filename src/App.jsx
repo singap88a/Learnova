@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
- 
 import Home from './pages/Home/Home';
 import Courses from './pages/Courses/Courses';
 import CourseDetails from './pages/Courses/CourseDetails';
@@ -24,7 +23,7 @@ function App() {
             <Route path="/course/:id" element={<CourseDetails />} />
             <Route path="/course/:id/lessons" element={<Lessons />} />
             <Route path="/instructors" element={<Instructors />} />
-            <Route path="/instructor/:id" element={<InstructorDetails />} />
+            <Route path="/instructors/:id" element={<InstructorDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
@@ -35,4 +34,7 @@ function App() {
   );
 }
 
-export default App;
+
+export default App
+
+

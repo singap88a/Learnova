@@ -40,8 +40,8 @@ const InstructorDetails = () => {
                 <img
                   src={instructor.avatar}
                   alt={instructor.name}
-                  className="object-cover w-48 h-48 border-4 rounded-full shadow-lg border-primary/20"
-                />
+                  className="object-cover w-45 h-80 border-4 rounded-full shadow-lg border-primary/20"
+                /> 
               ) : (
                 <div className="flex items-center justify-center w-48 h-48 rounded-full shadow-lg bg-gradient-to-r from-primary to-accent">
                   <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
