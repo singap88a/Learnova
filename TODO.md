@@ -1,7 +1,14 @@
-# TODO: Update Courses Components with New JSON Data and Professional Tailwind Design
+# TODO List for Navbar and Signup Modifications
 
 ## Tasks
-- [x] Update src/pages/Courses/Courses.jsx to import and use courses from src/data/courses.json
-- [x] Update src/components/Home/CoursesSection.jsx to import and use courses from src/data/courses.json
-- [x] Redesign src/components/Courses/CourseCard.jsx with professional Tailwind CSS, displaying rich course details (instructor, rating, tags, etc.)
-- [x] Test the application to ensure components render correctly with new data and design (Dev server running on http://localhost:5174/)
+- [x] Modify `src/components/NavbarLogedIn.jsx` to use the same navigation links as `src/components/Navbar.jsx` (Home, Courses, Instructors, About, Contact). Keep the user name and Logout button.
+- [x] Add automatic redirect to home page ("/") after successful signup in `src/pages/SignUP/index.jsx`.
+- [x] Verify that the navbar remains consistent and redirect works after signup.
+
+## Progress
+- [x] Understand the current code structure and requirements.
+- [x] Confirm plan with user.
+- [x] Updated NavbarLogedIn.jsx to have consistent navigation links.
+- [x] Added redirect to home page after signup.
+- [x] Started development server for testing.
+- [x] Browser tool disabled, unable to perform automated testing.

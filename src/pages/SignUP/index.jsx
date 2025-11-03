@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -68,6 +69,7 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
 }));
 
 export default function SignUp(props) {
+  const navigate = useNavigate();
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState("");
   const [passwordError, setPasswordError] = React.useState(false);
@@ -128,9 +130,8 @@ export default function SignUp(props) {
       await result.user.updateProfile({ displayName: name });
 
       console.log("User signed up:", result.user);
-      alert(`Welcome ${name}! Account created successfully.`);
-      // You can redirect after signup:
-      // navigate("/dashboard");
+      alert("تم التسجيل بنجاح");
+      navigate("/");
     } catch (error) {
       console.error("Sign up failed:", error.message);
       alert(error.message);
