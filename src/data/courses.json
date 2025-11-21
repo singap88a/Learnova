@@ -177,6 +177,7 @@
       "tags": ["react", "frontend", "hooks", "performance", "testing"],
       "short_description": "دورة متقدمة تغطي أفضل ممارسات React لبناء تطبيقات قابلة للصيانة والأداء العالي.",
       "long_description": "ستأخذك هذه الدورة من بناء مكونات متقدمة إلى إدارة الحالة العالمية، تحسين الأداء، اختبار المكونات، ونشر تطبيق React في بيئات إنتاجية. تركيز عملي مع أمثلة حقيقية ومشروعات تطبيقية.",
+      "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_001_l01",
@@ -344,6 +345,7 @@
       "tags": ["javascript", "es6", "asynchronous", "dom"],
       "short_description": "دورة متكاملة لتعلم JavaScript مع أمثلة تطبيقية ومشروعات عملية.",
       "long_description": "تغطي هذه الدورة كل شيء من قواعد اللغة الأساسية إلى المفاهيم المتقدمة مثل الوعود، async/await، تصميم الواجهات DOM و patterns حديثة في JavaScript.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_002_l01",
@@ -553,6 +555,7 @@
       "tags": ["html", "css", "responsive", "layout", "accessibility"],
       "short_description": "دورة عملية لتصميم واجهات جذابة واستجابية باستخدام HTML و CSS وحدها.",
       "long_description": "تعلم قواعد تصميم الواجهات، layout متقدمة باستخدام CSS Grid و Flexbox، نظام الألوان، الوصول، وتصميم متجاوب يعمل على جميع الشاشات.",
+      "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_003_l01",
@@ -691,6 +694,8 @@
       "tags": ["backend", "subscriptions", "payments", "auth"],
       "short_description": "تعلم بناء نظام عضويات واشتراكات كامل مع بوابات دفع، إدارة صلاحيات، وتجربة مستخدم سلسة.",
       "long_description": "في هذه الدورة سنتعلم كيفية تصميم وبناء نظام اشتراكات متكامل: من تسجيل المستخدمين والتحقق من الهوية، إلى تكامل بوابات الدفع، تجديد الاشتراكات، وإدارة المحتوى بناءً على مستوى العضوية.",
+            "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
+
       "syllabus": [
         {
           "lesson_id": "c_004_l01",
