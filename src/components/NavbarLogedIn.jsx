@@ -58,6 +58,7 @@ const NavbarLogedIn = () => {
 
   const userMenuItems = [
     { label: "My Profile", path: "/profile", icon: <User size={18} /> },
+    { label: "My Courses", path: "/my-courses", icon: <BookMarked size={18} /> },
   ];
 
   const isActiveLink = (path) => {

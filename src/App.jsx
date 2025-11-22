@@ -7,7 +7,10 @@ import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Courses from './pages/Courses/Courses';
 import CourseDetails from './pages/Courses/CourseDetails';
+import PurchaseCourse from './pages/Courses/PurchaseCourse';
+import PurchaseSuccess from './pages/Courses/PurchaseSuccess';
 import Lessons from './pages/Courses/Lessons';
+import MyCourses from './pages/MyCourses';
 import Instructors from './pages/Instructors/Instructors';
 import InstructorDetails from './pages/Instructors/InstructorDetails';
 import About from './pages/About/About';
@@ -32,7 +35,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/course/:id" element={<CourseDetails />} />
+            <Route path="/course/:id/purchase" element={<PurchaseCourse />} />
+            <Route path="/course/:id/purchase/success" element={<PurchaseSuccess />} />
             <Route path="/course/:id/lessons" element={<Lessons />} />
+            <Route path="/my-courses" element={<MyCourses />} />
             <Route path="/instructors" element={<Instructors />} />
             <Route path="/instructors/:id" element={<InstructorDetails />} />
             <Route path="/about" element={<About />} />
@@ -48,5 +54,3 @@ function App() {
 }
 
 export default App;
-
-

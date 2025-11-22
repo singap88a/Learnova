@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import coursesData from '../../data/courses.json';
+import { useAuth } from '../../hooks/useAuth';
 
 // مكونات فرعية لتحسين التنظيم
 const LoadingSpinner = () => (
@@ -51,12 +52,12 @@ const StarRating = ({ rating, id }) => {
   return <div className="flex items-center">{stars}</div>;
 };
 
-const CourseHeader = ({ course, isEnrolled, onEnroll, onWatchLessons, formatDuration, renderStars }) => (
+const CourseHeader = ({ course, onEnroll, formatDuration }) => (
   <div className="relative overflow-hidden text-white bg-gradient-to-br from-blue-700 via-blue-600 to-purple-700">
     <div className="absolute inset-0 bg-black/20"></div>
     <div className="absolute top-0 right-0 w-64 h-64 transform translate-x-32 -translate-y-32 rounded-full bg-white/10"></div>
     <div className="absolute bottom-0 left-0 transform -translate-x-48 translate-y-48 rounded-full w-96 h-96 bg-white/5"></div>
-    
+
     <div className="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="relative z-10">
@@ -123,21 +124,12 @@ const CourseHeader = ({ course, isEnrolled, onEnroll, onWatchLessons, formatDura
               <span className="mr-2 text-white/80">دولار</span>
             </div>
             <div className="flex gap-3">
-              {!isEnrolled ? (
-                <button
-                  onClick={onEnroll}
-                  className="px-8 py-3 font-semibold text-blue-600 transition-all duration-200 transform bg-white rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
-                >
-                  اشترك الآن
-                </button>
-              ) : (
-                <button
-                  onClick={onWatchLessons}
-                  className="px-8 py-3 font-semibold text-white transition-all duration-200 transform bg-green-500 rounded-lg shadow-lg hover:bg-green-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
-                >
-                  مشاهدة الدروس
-                </button>
-              )}
+              <button
+                onClick={onEnroll}
+                className="px-8 py-3 font-semibold text-blue-600 transition-all duration-200 transform bg-white rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+              >
+                اشترك الآن
+              </button>
               <button className="px-6 py-3 font-semibold text-white transition-all duration-200 border-2 border-white rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">
                 أضف إلى المفضلة
               </button>
@@ -172,7 +164,7 @@ const CourseHeader = ({ course, isEnrolled, onEnroll, onWatchLessons, formatDura
   </div>
 );
 
-const CourseContent = ({ course, isEnrolled, formatDuration }) => (
+const CourseContent = ({ course, isEnrolled, formatDuration, navigate }) => (
   <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
       {/* Main Content */}
@@ -398,9 +390,10 @@ const CourseContent = ({ course, isEnrolled, formatDuration }) => (
 const CourseDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const user = useAuth();
   const [course, setCourse] = useState(null);
-  const [isEnrolled, setIsEnrolled] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isEnrolled, setIsEnrolled] = useState(false);
 
   useEffect(() => {
     // محاكاة جلب البيانات من API
@@ -422,6 +415,14 @@ const CourseDetails = () => {
     fetchCourse();
   }, [id]);
 
+  // التحقق من حالة الاشتراك
+  useEffect(() => {
+    if (user) {
+      const enrolledCourses = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+      setIsEnrolled(enrolledCourses.includes(id));
+    }
+  }, [id, user]);
+
   const formatDuration = (hours) => {
     const h = Math.floor(hours);
     const m = Math.round((hours - h) * 60);
@@ -429,9 +430,8 @@ const CourseDetails = () => {
   };
 
   const handleEnroll = () => {
-    // محاكاة عملية الاشتراك
-    setIsEnrolled(true);
-    // في التطبيق الحقيقي، هنا سيتم التعامل مع الدفع والاشتراك
+    // الانتقال إلى صفحة الشراء
+    navigate(`/course/${id}/purchase`);
   };
 
   const handleWatchLessons = () => {
@@ -466,18 +466,18 @@ const CourseDetails = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <CourseHeader 
+      <CourseHeader
         course={course}
         isEnrolled={isEnrolled}
         onEnroll={handleEnroll}
         onWatchLessons={handleWatchLessons}
         formatDuration={formatDuration}
-        renderStars={StarRating}
       />
-      <CourseContent 
+      <CourseContent
         course={course}
         isEnrolled={isEnrolled}
         formatDuration={formatDuration}
+        navigate={navigate}
       />
     </div>
   );
