@@ -6,7 +6,7 @@ import NavbarLogedIn from './components/NavbarLogedIn';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Courses from './pages/Courses/Courses';
-import CourseDetails from './pages/Courses/CourseDetails';
+import CourseDetails from './pages/Courses/CourseDetails/CourseDetails.jsx';
 import PurchaseCourse from './pages/Courses/PurchaseCourse';
 import PurchaseSuccess from './pages/Courses/PurchaseSuccess';
 import Lessons from './pages/Courses/Lessons';

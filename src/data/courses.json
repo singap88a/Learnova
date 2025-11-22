@@ -8,9 +8,9 @@
   "instructors": [
     {
       "id": "i_alan",
-      "name": "أ. علاء الدين محمد",
+      "name": "Mr. Alaa El-Din Mohamed",
       "title": "Senior Frontend Engineer",
-      "bio": "مهندس واجهات أمامية بخبرة 9 سنوات في بناء تطبيقات React في شركات تقنية ومنصات تعليمية. مختص بالأداء والاختبار والنشر.",
+      "bio": "Frontend engineer with 9 years of experience building React applications for tech companies and educational platforms. Specialized in performance, testing, and deployment.",
       "avatar": "https://i.pinimg.com/1200x/f4/d0/d7/f4d0d74daaa590d1d00fecfba8be1bd0.jpg",
       "social": {
         "linkedin": "https://linkedin.com/in/alaaa",
@@ -25,7 +25,7 @@
       "specializations": ["React", "TypeScript", "Performance Optimization", "Testing"],
       "education": {
         "degree": "Bachelor of Computer Science",
-        "university": "جامعة القاهرة",
+        "university": "Cairo University",
         "graduation_year": 2016
       },
       "certifications": [
@@ -33,22 +33,22 @@
         "Google Cloud Professional",
         "React Advanced Certification"
       ],
-      "teaching_philosophy": "أؤمن بأن التعلم العملي هو الأساس لفهم المفاهيم التقنية. أركز على بناء مشاريع حقيقية وتطبيق أفضل الممارسات في كل درس.",
+      "teaching_philosophy": "I believe that hands-on learning is fundamental to understanding technical concepts. I focus on building real projects and applying best practices in every lesson.",
       "achievements": [
-        "أكثر من 12,000 طالب تخرجوا من دوراتي",
-        "مطور في شركة Google سابقاً",
-        "مؤلف كتاب 'React Performance Patterns'",
-        "متحدث في مؤتمرات React العالمية"
+        "Over 12,000 students graduated from my courses",
+        "Former developer at Google",
+        "Author of 'React Performance Patterns' book",
+        "Speaker at global React conferences"
       ],
-      "languages": ["العربية", "English"],
-      "location": "القاهرة، مصر",
-      "availability": "متاح للاستشارات والتدريب"
+      "languages": ["Arabic", "English"],
+      "location": "Cairo, Egypt",
+      "availability": "Available for consultations and training"
     },
     {
       "id": "i_reem",
-      "name": "د. ريم محمود",
+      "name": "Dr. Reem Mahmoud",
       "title": "Software Engineer & Trainer",
-      "bio": "محاضرة ومهندسة برمجيات بخبرة 11 سنة، تُعنى بتبسيط مفاهيم البرمجة للمبتدئين والمحترفين.",
+      "bio": "Lecturer and software engineer with 11 years of experience, focused on simplifying programming concepts for beginners and professionals.",
       "avatar": "https://i.pinimg.com/736x/6c/25/c3/6c25c36df447180feb76d06305760d6f.jpg",
       "social": {
         "linkedin": "https://linkedin.com/in/reemm",
@@ -63,7 +63,7 @@
       "specializations": ["JavaScript", "Node.js", "Full-stack Development", "Teaching"],
       "education": {
         "degree": "PhD in Computer Science",
-        "university": "جامعة الإسكندرية",
+        "university": "Alexandria University",
         "graduation_year": 2014
       },
       "certifications": [
@@ -71,22 +71,22 @@
         "Oracle Java Programmer",
         "AWS Solutions Architect"
       ],
-      "teaching_philosophy": "التعلم يجب أن يكون ممتعاً وتفاعلياً. أبدأ من الأساسيات وأبني المعرفة تدريجياً مع الكثير من الأمثلة العملية.",
+      "teaching_philosophy": "Learning should be fun and interactive. I start from basics and build knowledge gradually with plenty of practical examples.",
       "achievements": [
-        "أكثر من 22,000 طالب في دوراتي",
-        "محاضرة في جامعة الإسكندرية",
-        "مطورة في شركة Microsoft سابقاً",
-        "مؤلفة كتاب 'JavaScript for Beginners'"
+        "Over 22,000 students in my courses",
+        "Lecturer at Alexandria University",
+        "Former developer at Microsoft",
+        "Author of 'JavaScript for Beginners' book"
       ],
-      "languages": ["العربية", "English", "French"],
-      "location": "الإسكندرية، مصر",
-      "availability": "متاحة للورش التدريبية والاستشارات"
+      "languages": ["Arabic", "English", "French"],
+      "location": "Alexandria, Egypt",
+      "availability": "Available for workshops and consultations"
     },
     {
       "id": "i_salah",
-      "name": "م. صلاح أبوزيد",
+      "name": "Eng. Salah Abouzeid",
       "title": "UI/UX Designer",
-      "bio": "مصمم واجهات بخبرة 7 سنوات، يعمل على منتجات رقمية لشركات محلية ودولية. مهتم بالتصميم العملي وقابلية الاستخدام.",
+      "bio": "UI designer with 7 years of experience, working on digital products for local and international companies. Focused on practical design and usability.",
       "avatar": "https://i.pinimg.com/736x/dc/58/98/dc5898999a28f9155996795835b9aa66.jpg",
       "social": {
         "dribbble": "https://dribbble.com/salah",
@@ -101,7 +101,7 @@
       "specializations": ["UI/UX Design", "Design Systems", "Mobile Design", "Prototyping"],
       "education": {
         "degree": "Bachelor of Fine Arts - Graphic Design",
-        "university": "جامعة حلوان",
+        "university": "Helwan University",
         "graduation_year": 2018
       },
       "certifications": [
@@ -109,22 +109,22 @@
         "Adobe Certified Expert",
         "Figma Professional"
       ],
-      "teaching_philosophy": "التصميم هو فن وحل المشكلات. أركز على فهم احتياجات المستخدمين وبناء تجارب مذهلة من خلال التصميم.",
+      "teaching_philosophy": "Design is both art and problem-solving. I focus on understanding user needs and building amazing experiences through design.",
       "achievements": [
-        "أكثر من 6,800 طالب في دوراتي",
-        "مصمم في شركة Adobe سابقاً",
-        "فائز بجوائز تصميم دولية",
-        "مؤلف كتاب 'Modern UI Design Patterns'"
+        "Over 6,800 students in my courses",
+        "Former designer at Adobe",
+        "Winner of international design awards",
+        "Author of 'Modern UI Design Patterns' book"
       ],
-      "languages": ["العربية", "English"],
-      "location": "القاهرة، مصر",
-      "availability": "متاح لمشاريع التصميم والاستشارات"
+      "languages": ["Arabic", "English"],
+      "location": "Cairo, Egypt",
+      "availability": "Available for design projects and consultations"
     },
     {
       "id": "i_hassan",
-      "name": "م. حسن ربيع",
+      "name": "Eng. Hassan Rabie",
       "title": "Full-stack Developer",
-      "bio": "مهندس أنظمة ومؤسس مشاريع ويب. خبرة واسعة في أنظمة المدفوعات، الأمن والـ DevOps.",
+      "bio": "Systems engineer and founder of web projects. Extensive experience in payment systems, security, and DevOps.",
       "avatar": "https://i.pinimg.com/736x/a3/46/ee/a346eecd513e4a7568f2baa1bf9a06e8.jpg",
       "social": {
         "linkedin": "https://linkedin.com/in/hassanrb",
@@ -139,7 +139,7 @@
       "specializations": ["Full-stack Development", "Payment Systems", "Security", "DevOps"],
       "education": {
         "degree": "Master of Computer Engineering",
-        "university": "جامعة عين شمس",
+        "university": "Ain Shams University",
         "graduation_year": 2017
       },
       "certifications": [
@@ -148,40 +148,40 @@
         "Certified Ethical Hacker",
         "Stripe Integration Expert"
       ],
-      "teaching_philosophy": "التطوير الحديث يتطلب فهماً شاملاً للأنظمة. أركز على بناء حلول آمنة وقابلة للتوسع مع أفضل الممارسات.",
+      "teaching_philosophy": "Modern development requires comprehensive system understanding. I focus on building secure, scalable solutions with best practices.",
       "achievements": [
-        "أكثر من 9,400 طالب في دوراتي",
-        "مؤسس منصة تعليمية ناجحة",
-        "خبير في أنظمة الدفع الإلكتروني",
-        "متحدث في مؤتمرات الأمن السيبراني"
+        "Over 9,400 students in my courses",
+        "Founder of successful educational platform",
+        "Expert in electronic payment systems",
+        "Speaker at cybersecurity conferences"
       ],
-      "languages": ["العربية", "English"],
-      "location": "القاهرة، مصر",
-      "availability": "متاح للمشاريع والاستشارات الأمنية"
+      "languages": ["Arabic", "English"],
+      "location": "Cairo, Egypt",
+      "availability": "Available for projects and security consultations"
     }
   ],
   "courses": [
     {
-      "id": "c_001",
-      "title": "React.js المتقدم - بناء تطبيقات إنتاجية",
+       "id": "c_001",
+      "title": "Advanced React.js - Building Production Applications",
       "slug": "reactjs-advanced-building-production-apps",
       "category": "Front-end Development",
       "level": "Advanced",
-      "language": "Arabic",
-      "locale": "ar-EG",
+      "language": "English",
+      "locale": "en-US",
       "price": 199.0,
       "currency": "USD",
       "isPaid": true,
       "duration_hours": 18.5,
       "total_lessons": 12,
       "tags": ["react", "frontend", "hooks", "performance", "testing"],
-      "short_description": "دورة متقدمة تغطي أفضل ممارسات React لبناء تطبيقات قابلة للصيانة والأداء العالي.",
-      "long_description": "ستأخذك هذه الدورة من بناء مكونات متقدمة إلى إدارة الحالة العالمية، تحسين الأداء، اختبار المكونات، ونشر تطبيق React في بيئات إنتاجية. تركيز عملي مع أمثلة حقيقية ومشروعات تطبيقية.",
+      "short_description": "Advanced course covering React best practices for building maintainable and high-performance applications.",
+      "long_description": "This course takes you from building advanced components to global state management, performance optimization, component testing, and deploying React applications in production environments. Practical focus with real examples and applied projects.",
       "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_001_l01",
-          "title": "مقدمة وهيكل المشروع",
+          "title": "Introduction and Project Structure",
           "type": "video",
           "duration_min": 18,
           "video_url": "https://example.com/videos/c_001_l01.mp4",
@@ -189,7 +189,7 @@
         },
         {
           "lesson_id": "c_001_l02",
-          "title": "Hooks متقدمة: useReducer و useCallback و useMemo",
+          "title": "Advanced Hooks: useReducer, useCallback, and useMemo",
           "type": "video",
           "duration_min": 40,
           "video_url": "https://example.com/videos/c_001_l02.mp4",
@@ -197,7 +197,7 @@
         },
         {
           "lesson_id": "c_001_l03",
-          "title": "Code Splitting و Lazy Loading",
+          "title": "Code Splitting and Lazy Loading",
           "type": "video",
           "duration_min": 28,
           "video_url": "https://example.com/videos/c_001_l03.mp4",
@@ -205,7 +205,7 @@
         },
         {
           "lesson_id": "c_001_l04",
-          "title": "Performance Profiling و تحسين إعادة الرندرة",
+          "title": "Performance Profiling and Render Optimization",
           "type": "video",
           "duration_min": 35,
           "video_url": "https://example.com/videos/c_001_l04.mp4",
@@ -221,7 +221,7 @@
         },
         {
           "lesson_id": "c_001_l06",
-          "title": "Testing: Jest و React Testing Library",
+          "title": "Testing: Jest and React Testing Library",
           "type": "video",
           "duration_min": 60,
           "video_url": "https://example.com/videos/c_001_l06.mp4",
@@ -229,7 +229,7 @@
         },
         {
           "lesson_id": "c_001_l07",
-          "title": "TypeScript مع React (ممارسات متقدمة)",
+          "title": "TypeScript with React (Advanced Practices)",
           "type": "video",
           "duration_min": 55,
           "video_url": "https://example.com/videos/c_001_l07.mp4",
@@ -237,7 +237,7 @@
         },
         {
           "lesson_id": "c_001_l08",
-          "title": "SSR و SSG مع Next.js - مقارنة وورشة تطبيقية",
+          "title": "SSR and SSG with Next.js - Comparison and Workshop",
           "type": "video",
           "duration_min": 70,
           "video_url": "https://example.com/videos/c_001_l08.mp4",
@@ -245,7 +245,7 @@
         },
         {
           "lesson_id": "c_001_l09",
-          "title": "CI/CD و نشر التطبيق إلى Vercel / Netlify",
+          "title": "CI/CD and Deploying to Vercel/Netlify",
           "type": "video",
           "duration_min": 30,
           "video_url": "https://example.com/videos/c_001_l09.mp4",
@@ -253,7 +253,7 @@
         },
         {
           "lesson_id": "c_001_l10",
-          "title": "تحليل الأداء في الحياة الحقيقية و أدوات المراقبة",
+          "title": "Real-world Performance Analysis and Monitoring Tools",
           "type": "video",
           "duration_min": 27,
           "video_url": "https://example.com/videos/c_001_l10.mp4",
@@ -261,7 +261,7 @@
         },
         {
           "lesson_id": "c_001_l11",
-          "title": "مشروع عملي: بناء تطبيق إدارة دورات",
+          "title": "Practical Project: Building a Course Management App",
           "type": "project",
           "duration_min": 120,
           "video_url": "https://example.com/videos/c_001_l11.mp4",
@@ -269,7 +269,7 @@
         },
         {
           "lesson_id": "c_001_l12",
-          "title": "خاتمة و نصائح مهنية للوظيفة",
+          "title": "Conclusion and Professional Career Tips",
           "type": "video",
           "duration_min": 15,
           "video_url": "https://example.com/videos/c_001_l12.mp4",
@@ -278,9 +278,9 @@
       ],
       "instructor": {
         "id": "i_alan",
-        "name": "أ. علاء الدين محمد",
+        "name": "Mr. Alaa El-Din Mohamed",
         "title": "Senior Frontend Engineer",
-        "bio": "مهندس واجهات أمامية بخبرة 9 سنوات في بناء تطبيقات React في شركات تقنية ومنصات تعليمية. مختص بالأداء والاختبار والنشر.",
+        "bio": "Frontend engineer with 9 years of experience building React applications for tech companies and educational platforms. Specialized in performance, testing, and deployment.",
         "avatar": "https://example.com/avatars/alan.jpg",
         "social": {
           "linkedin": "https://linkedin.com/in/alaaa",
@@ -291,29 +291,29 @@
         "total_students": 12400
       },
       "prerequisites": [
-        "فهم جيد لأساسيات React (مكونات، props، state)",
-        "معرفة أساسية بـ JavaScript (ES6+)",
-        "مفهوم أساسي للـ Git"
+        "Good understanding of React basics (components, props, state)",
+        "Basic knowledge of JavaScript (ES6+)",
+        "Basic understanding of Git"
       ],
       "learning_outcomes": [
-        "بناء تطبيقات React متقدمة قابلة للصيانة",
-        "تحسين أداء التطبيقات وتقليل إعادة الرندرة",
-        "كتابة اختبارات وحدات ومكونات فعّالة",
-        "نشر تطبيقات React في بيئات إنتاجية"
+        "Build advanced, maintainable React applications",
+        "Optimize application performance and reduce re-renders",
+        "Write effective unit and component tests",
+        "Deploy React applications to production environments"
       ],
       "reviews": [
         {
           "review_id": "r_1001",
           "user": "Maged",
           "rating": 5,
-          "comment": "شرح ممتاز وعملي جداً. الأمثلة على الأداء مفيدة.",
+          "comment": "Excellent and very practical explanation. Performance examples are very useful.",
           "date": "2025-07-03"
         },
         {
           "review_id": "r_1002",
           "user": "Sara",
           "rating": 4,
-          "comment": "حببت المواضيع ولكن تمنيت أمثلة أكثر على حالات حقيقية.",
+          "comment": "Loved the topics but wished for more real-world case examples.",
           "date": "2025-08-12"
         }
       ],
@@ -323,33 +323,33 @@
       "last_updated": "2025-06-10",
       "status": "published",
       "seo": {
-        "meta_title": "React.js المتقدم — بناء تطبيقات إنتاجية",
-        "meta_description": "دورة متقدمة في React تغطي الأداء، الاختبار، TypeScript، والنشر. مناسب للمطورين الذين يريدون الانتقال لمرحلة الإنتاج.",
+        "meta_title": "Advanced React.js - Building Production Applications",
+        "meta_description": "Advanced React course covering performance, testing, TypeScript, and deployment. Suitable for developers wanting to move to production stage.",
         "keywords": ["React", "React Advanced", "Performance", "Testing"]
       },
       "related_courses": ["c_002", "c_003"]
     },
     {
-      "id": "c_002",
-      "title": "JavaScript شامل - من الأساسيات إلى الاحتراف",
+       "id": "c_002",
+      "title": "Comprehensive JavaScript - From Basics to Pro",
       "slug": "javascript-comprehensive-from-basics-to-pro",
       "category": "Programming",
       "level": "All Levels",
-      "language": "Arabic",
-      "locale": "ar-EG",
+      "language": "English",
+      "locale": "en-US",
       "price": 99.0,
       "currency": "USD",
       "isPaid": true,
       "duration_hours": 22.0,
       "total_lessons": 18,
       "tags": ["javascript", "es6", "asynchronous", "dom"],
-      "short_description": "دورة متكاملة لتعلم JavaScript مع أمثلة تطبيقية ومشروعات عملية.",
-      "long_description": "تغطي هذه الدورة كل شيء من قواعد اللغة الأساسية إلى المفاهيم المتقدمة مثل الوعود، async/await، تصميم الواجهات DOM و patterns حديثة في JavaScript.",
+      "short_description": "Complete course to learn JavaScript with practical examples and hands-on projects.",
+      "long_description": "This course covers everything from basic language syntax to advanced concepts like promises, async/await, DOM manipulation, and modern JavaScript patterns.",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_002_l01",
-          "title": "مقدمة وبيئة التطوير",
+          "title": "Introduction and Development Environment",
           "type": "video",
           "duration_min": 12,
           "video_url": "https://example.com/videos/c_002_l01.mp4",
@@ -357,7 +357,7 @@
         },
         {
           "lesson_id": "c_002_l02",
-          "title": "الأساسيات: المتغيرات، الأنواع، والتحكم في التدفق",
+          "title": "Basics: Variables, Types, and Control Flow",
           "type": "video",
           "duration_min": 35,
           "video_url": "https://example.com/videos/c_002_l02.mp4",
@@ -365,7 +365,7 @@
         },
         {
           "lesson_id": "c_002_l03",
-          "title": "الدوال ونطاقاتها (Scope) و Closures",
+          "title": "Functions, Scope, and Closures",
           "type": "video",
           "duration_min": 28,
           "video_url": "https://example.com/videos/c_002_l03.mp4",
@@ -373,7 +373,7 @@
         },
         {
           "lesson_id": "c_002_l04",
-          "title": "ES6+: arrow functions، destructuring، modules",
+          "title": "ES6+: Arrow Functions, Destructuring, Modules",
           "type": "video",
           "duration_min": 40,
           "video_url": "https://example.com/videos/c_002_l04.mp4",
@@ -381,7 +381,7 @@
         },
         {
           "lesson_id": "c_002_l05",
-          "title": "البرمجة الكائنية في JS و prototypes",
+          "title": "Object-Oriented Programming in JS and Prototypes",
           "type": "video",
           "duration_min": 38,
           "video_url": "https://example.com/videos/c_002_l05.mp4",
@@ -389,7 +389,7 @@
         },
         {
           "lesson_id": "c_002_l06",
-          "title": "Asynchronous JavaScript: callbacks, promises, async/await",
+          "title": "Asynchronous JavaScript: Callbacks, Promises, Async/Await",
           "type": "video",
           "duration_min": 50,
           "video_url": "https://example.com/videos/c_002_l06.mp4",
@@ -397,7 +397,7 @@
         },
         {
           "lesson_id": "c_002_l07",
-          "title": "التعامل مع DOM و الأحداث",
+          "title": "DOM Manipulation and Events",
           "type": "video",
           "duration_min": 42,
           "video_url": "https://example.com/videos/c_002_l07.mp4",
@@ -405,7 +405,7 @@
         },
         {
           "lesson_id": "c_002_l08",
-          "title": "التعامل مع الشبكات: Fetch و WebSockets",
+          "title": "Network Handling: Fetch and WebSockets",
           "type": "video",
           "duration_min": 33,
           "video_url": "https://example.com/videos/c_002_l08.mp4",
@@ -413,7 +413,7 @@
         },
         {
           "lesson_id": "c_002_l09",
-          "title": "نماذج تصميم (Design Patterns) في JS",
+          "title": "Design Patterns in JavaScript",
           "type": "video",
           "duration_min": 45,
           "video_url": "https://example.com/videos/c_002_l09.mp4",
@@ -421,7 +421,7 @@
         },
         {
           "lesson_id": "c_002_l10",
-          "title": "مشروع عملي: لعبة بسيطة بالـ Canvas",
+          "title": "Practical Project: Simple Canvas Game",
           "type": "project",
           "duration_min": 180,
           "video_url": "https://example.com/videos/c_002_l10.mp4",
@@ -429,7 +429,7 @@
         },
         {
           "lesson_id": "c_002_l11",
-          "title": "Debugging و Performance Tips",
+          "title": "Debugging and Performance Tips",
           "type": "video",
           "duration_min": 26,
           "video_url": "https://example.com/videos/c_002_l11.mp4",
@@ -437,7 +437,7 @@
         },
         {
           "lesson_id": "c_002_l12",
-          "title": "نشر واجهات خفيفة باستخدام Service Workers",
+          "title": "Deploying Lightweight Interfaces with Service Workers",
           "type": "video",
           "duration_min": 30,
           "video_url": "https://example.com/videos/c_002_l12.mp4",
@@ -445,7 +445,7 @@
         },
         {
           "lesson_id": "c_002_l13",
-          "title": "Security Basics في تطبيقات الويب",
+          "title": "Security Basics in Web Applications",
           "type": "video",
           "duration_min": 22,
           "video_url": "https://example.com/videos/c_002_l13.mp4",
@@ -453,7 +453,7 @@
         },
         {
           "lesson_id": "c_002_l14",
-          "title": "التعامل مع حزم npm و بناء الأدوات",
+          "title": "Working with npm Packages and Build Tools",
           "type": "video",
           "duration_min": 34,
           "video_url": "https://example.com/videos/c_002_l14.mp4",
@@ -461,7 +461,7 @@
         },
         {
           "lesson_id": "c_002_l15",
-          "title": "Testing: Unit و Integration",
+          "title": "Testing: Unit and Integration",
           "type": "video",
           "duration_min": 40,
           "video_url": "https://example.com/videos/c_002_l15.mp4",
@@ -469,7 +469,7 @@
         },
         {
           "lesson_id": "c_002_l16",
-          "title": "تحسين تجربة المستخدم و Accessibility",
+          "title": "User Experience Optimization and Accessibility",
           "type": "video",
           "duration_min": 25,
           "video_url": "https://example.com/videos/c_002_l16.mp4",
@@ -477,7 +477,7 @@
         },
         {
           "lesson_id": "c_002_l17",
-          "title": "مشروع نهاية الكورس: تطبيق SPA متكامل",
+          "title": "Final Course Project: Complete SPA Application",
           "type": "project",
           "duration_min": 240,
           "video_url": "https://example.com/videos/c_002_l17.mp4",
@@ -485,7 +485,7 @@
         },
         {
           "lesson_id": "c_002_l18",
-          "title": "نصائح للتعلم المستمر ومسار التطوير المهني",
+          "title": "Continuous Learning Tips and Career Development Path",
           "type": "video",
           "duration_min": 15,
           "video_url": "https://example.com/videos/c_002_l18.mp4",
@@ -494,9 +494,9 @@
       ],
       "instructor": {
         "id": "i_reem",
-        "name": "د. ريم محمود",
+        "name": "Dr. Reem Mahmoud",
         "title": "Software Engineer & Trainer",
-        "bio": "محاضرة ومهندسة برمجيات بخبرة 11 سنة، تُعنى بتبسيط مفاهيم البرمجة للمبتدئين والمحترفين.",
+        "bio": "Lecturer and software engineer with 11 years of experience, focused on simplifying programming concepts for beginners and professionals.",
         "avatar": "https://example.com/avatars/reem.jpg",
         "social": {
           "linkedin": "https://linkedin.com/in/reemm",
@@ -505,25 +505,25 @@
         "rating": 4.8,
         "total_students": 22000
       },
-      "prerequisites": ["جهاز كمبيوتر ومتصفح حديث", "رغبة قوية في التعلم"],
+      "prerequisites": ["Computer with modern browser", "Strong desire to learn"],
       "learning_outcomes": [
-        "إتقان JavaScript وكتابة كود نظيف",
-        "فهم التعامل مع الشبكات وDOM والـ asynchronous",
-        "بناء مشاريع واقعية ونشرها"
+        "Master JavaScript and write clean code",
+        "Understand network handling, DOM, and asynchronous operations",
+        "Build and deploy real-world projects"
       ],
       "reviews": [
         {
           "review_id": "r_2001",
           "user": "Khaled",
           "rating": 5,
-          "comment": "أفضل دورة JS شاهدتها — بسيطة ومنظمة.",
+          "comment": "Best JS course I've watched - simple and well-organized.",
           "date": "2025-03-21"
         },
         {
           "review_id": "r_2002",
           "user": "Nada",
           "rating": 4,
-          "comment": "المحتوى ممتاز لكن بعض الفيديوهات قصيرة قليلاً.",
+          "comment": "Content is excellent but some videos are a bit short.",
           "date": "2025-05-02"
         }
       ],
@@ -533,33 +533,33 @@
       "last_updated": "2025-04-15",
       "status": "published",
       "seo": {
-        "meta_title": "JavaScript شامل - ابدأ من الصفر حتى الاحتراف",
-        "meta_description": "دورة شاملة في JavaScript تغطي كل المستويات مع مشاريع عملية.",
+        "meta_title": "Comprehensive JavaScript - From Zero to Professional",
+        "meta_description": "Comprehensive JavaScript course covering all levels with practical projects.",
         "keywords": ["JavaScript", "ES6", "Async", "DOM"]
       },
       "related_courses": ["c_001", "c_004"]
     },
     {
-      "id": "c_003",
-      "title": "تصميم واجهات مستخدم احترافية باستخدام HTML & CSS",
+       "id": "c_003",
+      "title": "Professional UI Design using HTML & CSS",
       "slug": "ui-design-html-css-professional",
       "category": "Design / Front-end",
       "level": "Intermediate",
-      "language": "Arabic",
-      "locale": "ar-EG",
+      "language": "English",
+      "locale": "en-US",
       "price": 59.0,
       "currency": "USD",
       "isPaid": true,
       "duration_hours": 12.0,
       "total_lessons": 10,
       "tags": ["html", "css", "responsive", "layout", "accessibility"],
-      "short_description": "دورة عملية لتصميم واجهات جذابة واستجابية باستخدام HTML و CSS وحدها.",
-      "long_description": "تعلم قواعد تصميم الواجهات، layout متقدمة باستخدام CSS Grid و Flexbox، نظام الألوان، الوصول، وتصميم متجاوب يعمل على جميع الشاشات.",
+      "short_description": "Practical course for designing attractive and responsive interfaces using only HTML and CSS.",
+      "long_description": "Learn interface design principles, advanced layouts using CSS Grid and Flexbox, color systems, accessibility, and responsive design that works on all screens.",
       "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_003_l01",
-          "title": "مبادئ التصميم و UX أساسيات",
+          "title": "Design Principles and UX Basics",
           "type": "video",
           "duration_min": 20,
           "video_url": "https://example.com/videos/c_003_l01.mp4",
@@ -567,7 +567,7 @@
         },
         {
           "lesson_id": "c_003_l02",
-          "title": "HTML نظرة معمقة على العناصر الدلالية",
+          "title": "HTML Deep Dive into Semantic Elements",
           "type": "video",
           "duration_min": 22,
           "video_url": "https://example.com/videos/c_003_l02.mp4",
@@ -575,7 +575,7 @@
         },
         {
           "lesson_id": "c_003_l03",
-          "title": "CSS Grid - بناء تخطيطات متقدمة",
+          "title": "CSS Grid - Building Advanced Layouts",
           "type": "video",
           "duration_min": 35,
           "video_url": "https://example.com/videos/c_003_l03.mp4",
@@ -583,7 +583,7 @@
         },
         {
           "lesson_id": "c_003_l04",
-          "title": "Flexbox بالتفصيل و Patterns شهيرة",
+          "title": "Flexbox in Detail and Popular Patterns",
           "type": "video",
           "duration_min": 30,
           "video_url": "https://example.com/videos/c_003_l04.mp4",
@@ -591,7 +591,7 @@
         },
         {
           "lesson_id": "c_003_l05",
-          "title": "نظام ألوان و Typography لواجهات احترافية",
+          "title": "Color Systems and Typography for Professional Interfaces",
           "type": "video",
           "duration_min": 28,
           "video_url": "https://example.com/videos/c_003_l05.mp4",
@@ -599,7 +599,7 @@
         },
         {
           "lesson_id": "c_003_l06",
-          "title": "تصميم متجاوب و Mobile First",
+          "title": "Responsive Design and Mobile First",
           "type": "video",
           "duration_min": 32,
           "video_url": "https://example.com/videos/c_003_l06.mp4",
@@ -607,7 +607,7 @@
         },
         {
           "lesson_id": "c_003_l07",
-          "title": "تحسين الأداء في CSS و تقليل reflow/repaint",
+          "title": "CSS Performance Optimization and Reducing Reflow/Repaint",
           "type": "video",
           "duration_min": 20,
           "video_url": "https://example.com/videos/c_003_l07.mp4",
@@ -615,7 +615,7 @@
         },
         {
           "lesson_id": "c_003_l08",
-          "title": "Accessibility و ARIA best practices",
+          "title": "Accessibility and ARIA Best Practices",
           "type": "video",
           "duration_min": 25,
           "video_url": "https://example.com/videos/c_003_l08.mp4",
@@ -623,7 +623,7 @@
         },
         {
           "lesson_id": "c_003_l09",
-          "title": "تصميم نظام مكون (Component System) بـ HTML/CSS",
+          "title": "Designing Component System with HTML/CSS",
           "type": "video",
           "duration_min": 40,
           "video_url": "https://example.com/videos/c_003_l09.mp4",
@@ -631,7 +631,7 @@
         },
         {
           "lesson_id": "c_003_l10",
-          "title": "مشروع عملي: صفحة هبوط احترافية",
+          "title": "Practical Project: Professional Landing Page",
           "type": "project",
           "duration_min": 150,
           "video_url": "https://example.com/videos/c_003_l10.mp4",
@@ -640,9 +640,9 @@
       ],
       "instructor": {
         "id": "i_salah",
-        "name": "م. صلاح أبوزيد",
+        "name": "Eng. Salah Abouzeid",
         "title": "UI/UX Designer",
-        "bio": "مصمم واجهات بخبرة 7 سنوات، يعمل على منتجات رقمية لشركات محلية ودولية. مهتم بالتصميم العملي وقابلية الاستخدام.",
+        "bio": "UI designer with 7 years of experience, working on digital products for local and international companies. Focused on practical design and usability.",
         "avatar": "https://example.com/avatars/salah.jpg",
         "social": {
           "dribbble": "https://dribbble.com/salah",
@@ -651,18 +651,18 @@
         "rating": 4.7,
         "total_students": 6800
       },
-      "prerequisites": ["معرفة أساسية بـ HTML/CSS (مبادئ)"],
+      "prerequisites": ["Basic knowledge of HTML/CSS (fundamentals)"],
       "learning_outcomes": [
-        "تصميم صفحات متجاوبة احترافية",
-        "استخدام CSS Grid و Flexbox بكفاءة",
-        "تصميم مكونات قابلة لإعادة الاستخدام"
+        "Design professional responsive pages",
+        "Efficiently use CSS Grid and Flexbox",
+        "Design reusable components"
       ],
       "reviews": [
         {
           "review_id": "r_3001",
           "user": "Yara",
           "rating": 5,
-          "comment": "الكورس مفصل وبسيط، المشاريع مفيدة.",
+          "comment": "Course is detailed and simple, projects are very useful.",
           "date": "2025-01-11"
         }
       ],
@@ -672,34 +672,33 @@
       "last_updated": "2024-12-01",
       "status": "published",
       "seo": {
-        "meta_title": "تصميم واجهات احترافية - HTML & CSS",
-        "meta_description": "تعلم تصميم واجهات جذابة واستجابية باستخدام HTML و CSS. مناسب لمطوري الواجهات والمصممين.",
+        "meta_title": "Professional UI Design - HTML & CSS",
+        "meta_description": "Learn to design attractive and responsive interfaces using HTML and CSS. Suitable for frontend developers and designers.",
         "keywords": ["UI Design", "HTML", "CSS", "Responsive"]
       },
       "related_courses": ["c_002"]
     },
     {
-      "id": "c_004",
-      "title": "دورة شاملة لإنشاء نظام عضويات واشتراكات للمواقع",
+       "id": "c_004",
+      "title": "Complete Course for Creating Membership and Subscription Systems for Websites",
       "slug": "membership-subscription-system",
       "category": "Full-stack",
       "level": "Intermediate",
-      "language": "Arabic",
-      "locale": "ar-EG",
+      "language": "English",
+      "locale": "en-US",
       "price": 149.0,
       "currency": "USD",
       "isPaid": true,
       "duration_hours": 16.0,
       "total_lessons": 14,
       "tags": ["backend", "subscriptions", "payments", "auth"],
-      "short_description": "تعلم بناء نظام عضويات واشتراكات كامل مع بوابات دفع، إدارة صلاحيات، وتجربة مستخدم سلسة.",
-      "long_description": "في هذه الدورة سنتعلم كيفية تصميم وبناء نظام اشتراكات متكامل: من تسجيل المستخدمين والتحقق من الهوية، إلى تكامل بوابات الدفع، تجديد الاشتراكات، وإدارة المحتوى بناءً على مستوى العضوية.",
-            "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
-
+      "short_description": "Learn to build a complete membership and subscription system with payment gateways, permission management, and smooth user experience.",
+      "long_description": "In this course, we'll learn how to design and build a complete subscription system: from user registration and authentication, to payment gateway integration, subscription renewals, and content management based on membership level.",
+      "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
       "syllabus": [
         {
           "lesson_id": "c_004_l01",
-          "title": "متطلبات النظام وتصميم قاعدة البيانات",
+          "title": "System Requirements and Database Design",
           "type": "video",
           "duration_min": 30,
           "video_url": "https://example.com/videos/c_004_l01.mp4",
@@ -707,7 +706,7 @@
         },
         {
           "lesson_id": "c_004_l02",
-          "title": "Auth و JWT و Refresh Tokens",
+          "title": "Auth, JWT, and Refresh Tokens",
           "type": "video",
           "duration_min": 35,
           "video_url": "https://example.com/videos/c_004_l02.mp4",
@@ -715,7 +714,7 @@
         },
         {
           "lesson_id": "c_004_l03",
-          "title": "تصميم API لإدارة الاشتراكات",
+          "title": "Designing API for Subscription Management",
           "type": "video",
           "duration_min": 40,
           "video_url": "https://example.com/videos/c_004_l03.mp4",
@@ -723,7 +722,7 @@
         },
         {
           "lesson_id": "c_004_l04",
-          "title": "تكامل بوابات دفع: Stripe مثالاً",
+          "title": "Payment Gateway Integration: Stripe Example",
           "type": "video",
           "duration_min": 50,
           "video_url": "https://example.com/videos/c_004_l04.mp4",
@@ -731,7 +730,7 @@
         },
         {
           "lesson_id": "c_004_l05",
-          "title": "إدارة صلاحيات الوصول و Roles",
+          "title": "Access Permission Management and Roles",
           "type": "video",
           "duration_min": 32,
           "video_url": "https://example.com/videos/c_004_l05.mp4",
@@ -739,7 +738,7 @@
         },
         {
           "lesson_id": "c_004_l06",
-          "title": "Webhooks و معالجة الأحداث",
+          "title": "Webhooks and Event Processing",
           "type": "video",
           "duration_min": 28,
           "video_url": "https://example.com/videos/c_004_l06.mp4",
@@ -747,7 +746,7 @@
         },
         {
           "lesson_id": "c_004_l07",
-          "title": "إرسال رسائل البريد و إشعارات الدفع",
+          "title": "Sending Emails and Payment Notifications",
           "type": "video",
           "duration_min": 25,
           "video_url": "https://example.com/videos/c_004_l07.mp4",
@@ -755,7 +754,7 @@
         },
         {
           "lesson_id": "c_004_l08",
-          "title": "إدارة الفواتير و السجلات المالية",
+          "title": "Invoice Management and Financial Records",
           "type": "video",
           "duration_min": 30,
           "video_url": "https://example.com/videos/c_004_l08.mp4",
@@ -763,7 +762,7 @@
         },
         {
           "lesson_id": "c_004_l09",
-          "title": "واجهة الإدارة للمشرفين (Admin Panel)",
+          "title": "Admin Panel for Administrators",
           "type": "video",
           "duration_min": 40,
           "video_url": "https://example.com/videos/c_004_l09.mp4",
@@ -771,7 +770,7 @@
         },
         {
           "lesson_id": "c_004_l10",
-          "title": "استراتيجيات الحماية و Backups",
+          "title": "Security Strategies and Backups",
           "type": "video",
           "duration_min": 22,
           "video_url": "https://example.com/videos/c_004_l10.mp4",
@@ -779,7 +778,7 @@
         },
         {
           "lesson_id": "c_004_l11",
-          "title": "اختبارات التكامل و اختبار الأمان",
+          "title": "Integration Tests and Security Testing",
           "type": "video",
           "duration_min": 30,
           "video_url": "https://example.com/videos/c_004_l11.mp4",
@@ -787,7 +786,7 @@
         },
         {
           "lesson_id": "c_004_l12",
-          "title": "تجهيز للاطلاق: scaling و monitoring",
+          "title": "Launch Preparation: Scaling and Monitoring",
           "type": "video",
           "duration_min": 27,
           "video_url": "https://example.com/videos/c_004_l12.mp4",
@@ -795,7 +794,7 @@
         },
         {
           "lesson_id": "c_004_l13",
-          "title": "مشروع عملي: بناء نظام اشتراكات متكامل",
+          "title": "Practical Project: Building Complete Subscription System",
           "type": "project",
           "duration_min": 200,
           "video_url": "https://example.com/videos/c_004_l13.mp4",
@@ -803,7 +802,7 @@
         },
         {
           "lesson_id": "c_004_l14",
-          "title": "توصيات صيانة و تطوير المميزات مستقبلاً",
+          "title": "Maintenance Recommendations and Future Feature Development",
           "type": "video",
           "duration_min": 15,
           "video_url": "https://example.com/videos/c_004_l14.mp4",
@@ -812,9 +811,9 @@
       ],
       "instructor": {
         "id": "i_hassan",
-        "name": "م. حسن ربيع",
+        "name": "Eng. Hassan Rabie",
         "title": "Full-stack Developer",
-        "bio": "مهندس أنظمة ومؤسس مشاريع ويب. خبرة واسعة في أنظمة المدفوعات، الأمن والـ DevOps.",
+        "bio": "Systems engineer and founder of web projects. Extensive experience in payment systems, security, and DevOps.",
         "avatar": "https://example.com/avatars/hassan.jpg",
         "social": {
           "linkedin": "https://linkedin.com/in/hassanrb",
@@ -824,21 +823,21 @@
         "total_students": 9400
       },
       "prerequisites": [
-        "معرفة أساسية بالـ JavaScript",
-        "فهم لواجهات REST APIs",
-        "معرفة بيئة سيرفر (Node.js أو أي backend)"
+        "Basic knowledge of JavaScript",
+        "Understanding of REST APIs",
+        "Knowledge of server environment (Node.js or any backend)"
       ],
       "learning_outcomes": [
-        "بناء نظام اشتراكات آمن وعملي",
-        "التكامل مع بوابات الدفع ومعالجة webhooks",
-        "إدارة صلاحيات المستخدمين وواجهات المشرف"
+        "Build secure and practical subscription systems",
+        "Integrate with payment gateways and process webhooks",
+        "Manage user permissions and admin interfaces"
       ],
       "reviews": [
         {
           "review_id": "r_4001",
           "user": "Omar",
           "rating": 5,
-          "comment": "الدورة غطت كل التفاصيل اللي احتاجتها لبناء نظام اشتراكات.",
+          "comment": "The course covered all the details I needed to build a subscription system.",
           "date": "2025-02-10"
         }
       ],
@@ -848,8 +847,8 @@
       "last_updated": "2025-09-05",
       "status": "published",
       "seo": {
-        "meta_title": "نظام عضويات واشتراكات - بناء و تكامل مدفوعات",
-        "meta_description": "تعلم بناء نظام اشتراكات متكامل للمواقع والتطبيقات مع تكامل Stripe وطرق حماية متقدمة.",
+        "meta_title": "Membership and Subscription System - Building and Payment Integration",
+        "meta_description": "Learn to build a complete subscription system for websites and applications with Stripe integration and advanced protection methods.",
         "keywords": ["subscriptions", "payments", "membership", "stripe"]
       },
       "related_courses": ["c_002"]
