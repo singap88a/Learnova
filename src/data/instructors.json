@@ -1,0 +1,157 @@
+{
+  "instructors": [
+    {
+      "id": "i_alan",
+      "name": "Mr. Alaa El-Din Mohamed",
+      "title": "Senior Frontend Engineer",
+      "bio": "Frontend engineer with 9 years of experience building React applications for tech companies and educational platforms. Specialized in performance, testing, and deployment.",
+      "avatar": "https://i.pinimg.com/1200x/f4/d0/d7/f4d0d74daaa590d1d00fecfba8be1bd0.jpg",
+      "social": {
+        "linkedin": "https://linkedin.com/in/alaaa",
+        "github": "https://github.com/alaaa",
+        "twitter": "https://twitter.com/alaaa",
+        "youtube": "https://youtube.com/@alaaa_dev",
+        "website": "https://alaaa.dev"
+      },
+      "rating": 4.9,
+      "total_students": 12400,
+      "experience_years": 9,
+      "specializations": ["React", "TypeScript", "Performance Optimization", "Testing"],
+      "education": {
+        "degree": "Bachelor of Computer Science",
+        "university": "Cairo University",
+        "graduation_year": 2016
+      },
+      "certifications": [
+        "AWS Certified Developer",
+        "Google Cloud Professional",
+        "React Advanced Certification"
+      ],
+      "teaching_philosophy": "I believe that hands-on learning is fundamental to understanding technical concepts. I focus on building real projects and applying best practices in every lesson.",
+      "achievements": [
+        "Over 12,000 students graduated from my courses",
+        "Former developer at Google",
+        "Author of 'React Performance Patterns' book",
+        "Speaker at global React conferences"
+      ],
+      "languages": ["Arabic", "English"],
+      "location": "Cairo, Egypt",
+      "availability": "Available for consultations and training"
+    },
+    {
+      "id": "i_reem",
+      "name": "Dr. Reem Mahmoud",
+      "title": "Software Engineer & Trainer",
+      "bio": "Lecturer and software engineer with 11 years of experience, focused on simplifying programming concepts for beginners and professionals.",
+      "avatar": "https://i.pinimg.com/736x/6c/25/c3/6c25c36df447180feb76d06305760d6f.jpg",
+      "social": {
+        "linkedin": "https://linkedin.com/in/reemm",
+        "github": "https://github.com/reemm",
+        "twitter": "https://twitter.com/reemm_tech",
+        "youtube": "https://youtube.com/@reem_tech",
+        "website": "https://reem.tech"
+      },
+      "rating": 4.8,
+      "total_students": 22000,
+      "experience_years": 11,
+      "specializations": ["JavaScript", "Node.js", "Full-stack Development", "Teaching"],
+      "education": {
+        "degree": "PhD in Computer Science",
+        "university": "Alexandria University",
+        "graduation_year": 2014
+      },
+      "certifications": [
+        "Microsoft Certified Trainer",
+        "Oracle Java Programmer",
+        "AWS Solutions Architect"
+      ],
+      "teaching_philosophy": "Learning should be fun and interactive. I start from basics and build knowledge gradually with plenty of practical examples.",
+      "achievements": [
+        "Over 22,000 students in my courses",
+        "Lecturer at Alexandria University",
+        "Former developer at Microsoft",
+        "Author of 'JavaScript for Beginners' book"
+      ],
+      "languages": ["Arabic", "English", "French"],
+      "location": "Alexandria, Egypt",
+      "availability": "Available for workshops and consultations"
+    },
+    {
+      "id": "i_salah",
+      "name": "Eng. Salah Abouzeid",
+      "title": "UI/UX Designer",
+      "bio": "UI designer with 7 years of experience, working on digital products for local and international companies. Focused on practical design and usability.",
+      "avatar": "https://i.pinimg.com/736x/dc/58/98/dc5898999a28f9155996795835b9aa66.jpg",
+      "social": {
+        "dribbble": "https://dribbble.com/salah",
+        "behance": "https://behance.net/salah",
+        "linkedin": "https://linkedin.com/in/salah_design",
+        "instagram": "https://instagram.com/salah_design",
+        "website": "https://salah.design"
+      },
+      "rating": 4.7,
+      "total_students": 6800,
+      "experience_years": 7,
+      "specializations": ["UI/UX Design", "Design Systems", "Mobile Design", "Prototyping"],
+      "education": {
+        "degree": "Bachelor of Fine Arts - Graphic Design",
+        "university": "Helwan University",
+        "graduation_year": 2018
+      },
+      "certifications": [
+        "Google UX Design Certificate",
+        "Adobe Certified Expert",
+        "Figma Professional"
+      ],
+      "teaching_philosophy": "Design is both art and problem-solving. I focus on understanding user needs and building amazing experiences through design.",
+      "achievements": [
+        "Over 6,800 students in my courses",
+        "Former designer at Adobe",
+        "Winner of international design awards",
+        "Author of 'Modern UI Design Patterns' book"
+      ],
+      "languages": ["Arabic", "English"],
+      "location": "Cairo, Egypt",
+      "availability": "Available for design projects and consultations"
+    },
+    {
+      "id": "i_hassan",
+      "name": "Eng. Hassan Rabie",
+      "title": "Full-stack Developer",
+      "bio": "Systems engineer and founder of web projects. Extensive experience in payment systems, security, and DevOps.",
+      "avatar": "https://i.pinimg.com/736x/a3/46/ee/a346eecd513e4a7568f2baa1bf9a06e8.jpg",
+      "social": {
+        "linkedin": "https://linkedin.com/in/hassanrb",
+        "github": "https://github.com/hassanrb",
+        "twitter": "https://twitter.com/hassanrb_dev",
+        "youtube": "https://youtube.com/@hassanrb",
+        "website": "https://hassanrb.com"
+      },
+      "rating": 4.85,
+      "total_students": 9400,
+      "experience_years": 8,
+      "specializations": ["Full-stack Development", "Payment Systems", "Security", "DevOps"],
+      "education": {
+        "degree": "Master of Computer Engineering",
+        "university": "Ain Shams University",
+        "graduation_year": 2017
+      },
+      "certifications": [
+        "Certified Kubernetes Administrator",
+        "AWS DevOps Engineer",
+        "Certified Ethical Hacker",
+        "Stripe Integration Expert"
+      ],
+      "teaching_philosophy": "Modern development requires comprehensive system understanding. I focus on building secure, scalable solutions with best practices.",
+      "achievements": [
+        "Over 9,400 students in my courses",
+        "Founder of successful educational platform",
+        "Expert in electronic payment systems",
+        "Speaker at cybersecurity conferences"
+      ],
+      "languages": ["Arabic", "English"],
+      "location": "Cairo, Egypt",
+      "availability": "Available for projects and security consultations"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Star, Users, Award, ArrowRight } from 'lucide-react';
 import InstructorCard from '../Instructors/InstructorCard';
-import coursesData from '../../data/courses.json';
+import coursesData from '../../data/instructors.json';
 
 const InstructorsSection = () => {
   const navigate = useNavigate();

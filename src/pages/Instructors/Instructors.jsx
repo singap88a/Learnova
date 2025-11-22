@@ -3,7 +3,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaLinkedin, FaGithub, FaTwitter, FaYoutube, FaGlobe, FaDribbble, FaBehance, FaInstagram } from 'react-icons/fa';
-import coursesData from '../../data/courses.json';
+import coursesData from '../../data/instructors.json';
 
 const socialIcons = {
   linkedin: <FaLinkedin className="w-5 h-5 text-blue-600" />,
