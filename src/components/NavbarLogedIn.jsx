@@ -160,14 +160,14 @@ const NavbarLogedIn = () => {
                 </div>
 
                 {/* User Info */}
-                <div className="text-left">
+                <Link to="/profile" className="text-left">
                   <p className="text-sm font-semibold text-gray-900">
                     {user?.displayName || "User"}
                   </p>
                   <p className="text-xs text-gray-500">
                     {user?.email}
                   </p>
-                </div>
+                </Link>
 
                 <ChevronDown
                   size={16}
