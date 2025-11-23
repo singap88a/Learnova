@@ -1,464 +1,240 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import coursesData from '../../data/courses.json';
+import { useAuth } from '../../hooks/useAuth';
 
-// Enhanced sub-components
-const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-    <div className="text-center">
-      <div className="relative">
-        <div className="w-20 h-20 mx-auto mb-6 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
-        <div className="absolute w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 rounded-full top-1/2 left-1/2"></div>
+const LoadingSpinner = ({ message = 'Loading...' }) => (
+  <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="flex flex-col items-center">
+      <div className="w-16 h-16 mb-4 border-4 border-blue-600 rounded-full border-t-transparent animate-spin" />
+      <div className="text-center">
+        <p className="text-lg font-medium text-gray-700">{message}</p>
+        <p className="text-sm text-gray-500">Please wait a moment</p>
       </div>
-      <p className="text-lg font-medium text-gray-700">Loading course details...</p>
-      <p className="mt-2 text-sm text-gray-500">Please wait a moment</p>
     </div>
   </div>
 );
 
-const PaymentMethodCard = ({ method, selected, onSelect }) => (
-  <div
-    onClick={() => onSelect(method.id)}
-    className={`p-5 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
-      selected 
-        ? 'border-blue-500 bg-blue-50 shadow-md' 
-        : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+const PaymentMethod = ({ id, name, icon, selected, onSelect, badge }) => (
+  <button
+    aria-pressed={selected}
+    onClick={() => onSelect(id)}
+    className={`w-full text-left p-4 rounded-lg transition-shadow flex items-center justify-between border ${
+      selected ? 'border-blue-500 shadow-lg bg-gradient-to-r from-white to-blue-50' : 'border-gray-200 bg-white hover:shadow'
     }`}
   >
-    <div className="flex items-center justify-between">
-      <div className="flex items-center">
-        <div className={`w-6 h-6 rounded-full border-2 mr-4 flex items-center justify-center ${
-          selected ? 'border-blue-500 bg-blue-500' : 'border-gray-400'
-        }`}>
-          {selected && (
-            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-          )}
-        </div>
-        <div className="flex items-center">
-          <div className="mr-3 text-2xl">{method.icon}</div>
+    <div className="flex items-center gap-3">
+      <div className="flex items-center justify-center w-10 h-10 text-xl bg-gray-100 rounded-md">{icon}</div>
+      <div>
+        <div className="font-semibold text-gray-900">{name}</div>
+        <div className="text-xs text-gray-500">Fast & secure</div>
+      </div>
+    </div>
+    {badge && <span className="px-2 py-1 text-xs text-blue-700 bg-blue-100 rounded-full">{badge}</span>}
+  </button>
+);
+
+const RegisterRequiredModal = ({ open, onClose, onSignUp, onLogin }) => {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/40" onClick={onClose} />
+      <div className="relative w-full max-w-md p-6 bg-white shadow-xl rounded-2xl">
+        <button onClick={onClose} className="absolute text-gray-400 top-3 right-3 hover:text-gray-600" aria-label="Close">×</button>
+        <div className="flex items-start gap-4">
+          <div className="flex items-center justify-center text-white bg-blue-600 rounded-lg w-14 h-14">i</div>
           <div>
-            <h3 className="font-semibold text-gray-900">{method.name}</h3>
-            <p className="text-sm text-gray-500">{method.description}</p>
+            <h3 className="text-lg font-semibold">Account required</h3>
+            <p className="mt-1 text-sm text-gray-600">You need an account to complete the purchase. Create one or log in to continue.</p>
+            <div className="flex gap-3 mt-4">
+              <button onClick={onSignUp} className="px-4 py-2 text-white bg-blue-600 rounded-md">Create account</button>
+              <button onClick={onLogin} className="px-4 py-2 bg-gray-100 rounded-md">Log in</button>
+            </div>
           </div>
         </div>
       </div>
-      {method.badge && (
-        <span className="px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded-full">
-          {method.badge}
-        </span>
-      )}
     </div>
-  </div>
-);
+  );
+};
 
 const PurchaseCourse = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const user = useAuth();
+
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedPayment, setSelectedPayment] = useState('visa');
-  const [couponCode, setCouponCode] = useState('');
-  const [discount, setDiscount] = useState(0);
-  const [finalPrice, setFinalPrice] = useState(0);
   const [processing, setProcessing] = useState(false);
-  const [couponMessage, setCouponMessage] = useState('');
 
-  // Available payment methods
+  const [selectedPayment, setSelectedPayment] = useState('card');
+  const [coupon, setCoupon] = useState('');
+  const [couponMsg, setCouponMsg] = useState(null);
+  const [appliedDiscount, setAppliedDiscount] = useState(0);
+
   const paymentMethods = [
-    {
-      id: 'visa',
-      name: 'Visa / Mastercard',
-      icon: '💳',
-      description: 'Pay securely with your credit card',
-      badge: 'Most Popular'
-    },
-    {
-      id: 'paypal',
-      name: 'PayPal',
-      icon: '🅿️',
-      description: 'Pay with your PayPal account'
-    },
-    {
-      id: 'mada',
-      name: 'Mada',
-      icon: '🏦',
-      description: 'Pay with Mada card'
-    },
-    {
-      id: 'applepay',
-      name: 'Apple Pay',
-      icon: '',
-      description: 'Pay with Apple Pay'
-    }
+    { id: 'card', name: 'Credit / Debit Card', icon: '💳', badge: 'Popular' },
+    { id: 'paypal', name: 'PayPal', icon: '🅿️' },
+    { id: 'apple', name: 'Apple Pay', icon: '' }
   ];
 
-  // Available discount coupons (sample data)
-  const availableCoupons = {
-    'LEARNNOW10': 10,
-    'STUDENT20': 20,
-    'FIRSTBUY15': 15,
-    'WELCOME5': 5
-  };
+  const coupons = { LEARNNOW10: 10, STUDENT20: 20, WELCOME5: 5 };
 
   useEffect(() => {
-    const fetchCourse = async () => {
-      setLoading(true);
-      try {
-        // Simulate API data fetching
-        setTimeout(() => {
-          const foundCourse = coursesData.courses.find(c => c.id === id);
-          if (foundCourse) {
-            setCourse(foundCourse);
-            setFinalPrice(foundCourse.price);
-          }
-          setLoading(false);
-        }, 1000);
-      } catch (error) {
-        console.error('Error fetching course:', error);
-        setLoading(false);
-      }
-    };
-
-    fetchCourse();
+    let mounted = true;
+    setLoading(true);
+    setTimeout(() => {
+      if (!mounted) return;
+      const found = coursesData.courses.find(c => c.id === id);
+      if (found) setCourse(found);
+      setLoading(false);
+    }, 600);
+    return () => { mounted = false; };
   }, [id]);
 
   const applyCoupon = () => {
-    if (!couponCode.trim()) {
-      setCouponMessage('Please enter a coupon code');
+    setCouponMsg(null);
+    if (!coupon.trim()) {
+      setCouponMsg({ type: 'error', text: 'Please enter a coupon code' });
       return;
     }
-
-    if (availableCoupons[couponCode.toUpperCase()]) {
-      const discountPercent = availableCoupons[couponCode.toUpperCase()];
-      const discountAmount = (course.price * discountPercent) / 100;
-      setDiscount(discountAmount);
-      setFinalPrice(course.price - discountAmount);
-      setCouponMessage(`Successfully applied ${discountPercent}% discount!`);
-    } else {
-      setDiscount(0);
-      setFinalPrice(course.price);
-      setCouponMessage('Invalid or expired coupon code');
+    const pct = coupons[coupon.toUpperCase()];
+    if (!pct) {
+      setCouponMsg({ type: 'error', text: 'Invalid or expired coupon' });
+      setAppliedDiscount(0);
+      return;
     }
+    const amount = (course.price * pct) / 100;
+    setAppliedDiscount(amount);
+    setCouponMsg({ type: 'success', text: `Applied ${pct}% off — you saved $${amount.toFixed(2)}` });
   };
 
-  const handlePurchase = async () => {
-    setProcessing(true);
+  const total = course ? (course.price - appliedDiscount) : 0;
 
-    // Simulate payment processing
+  const handlePay = () => {
+    setProcessing(true);
     setTimeout(() => {
       setProcessing(false);
-      // After successful payment, navigate to success page
       navigate(`/course/${id}/purchase/success`);
-    }, 3000);
+    }, 1400);
   };
 
-  if (loading) {
-    return <LoadingSpinner />;
-  }
+  const [showModal, setShowModal] = useState(false);
 
-  if (!course) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-md p-8 mx-auto text-center">
-          <div className="flex items-center justify-center w-24 h-24 mx-auto mb-6 bg-red-100 rounded-full">
-            <svg className="w-12 h-12 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h2 className="mb-4 text-2xl font-bold text-gray-800">Course Not Found</h2>
-          <p className="mb-6 text-gray-600">Sorry, we couldn't find the requested course. It may be unavailable or deleted.</p>
-          <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <button
-              onClick={() => navigate('/courses')}
-              className="px-6 py-3 font-medium text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700"
-            >
-              Browse All Courses
-            </button>
-            <button
-              onClick={() => navigate('/')}
-              className="px-6 py-3 font-medium text-gray-700 transition-colors bg-gray-100 rounded-lg hover:bg-gray-200"
-            >
-              Back to Home
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="min-h-screen py-8 bg-gradient-to-br from-blue-50 to-indigo-50">
-      <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-        {/* Page Header */}
-        <header className="mb-8">
-          <button
-            onClick={() => navigate(`/course/${id}`)}
-            className="inline-flex items-center px-4 py-2.5 text-gray-700 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors font-medium"
-          >
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Course Details
-          </button>
-          <h1 className="mt-4 text-3xl font-bold text-gray-900">Complete Your Purchase</h1>
-          <p className="mt-2 text-gray-600">One step away from starting your learning journey</p>
-        </header>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* Course Details */}
-          <div className="space-y-6 lg:col-span-2">
-            <div className="overflow-hidden bg-white shadow-lg rounded-2xl">
-              <div className="p-6 border-b border-gray-100">
-                <h2 className="text-xl font-bold text-gray-900">Course Details</h2>
-              </div>
-              <div className="p-6">
-                <div className="flex flex-col gap-5 sm:flex-row">
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className="object-cover w-full h-40 sm:w-32 sm:h-32 rounded-xl"
-                  />
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-bold text-gray-900">{course.title}</h3>
-                    <p className="mt-1 text-gray-600">Instructor: {course.instructor.name}</p>
-                    
-                    <div className="flex flex-wrap gap-4 mt-4">
-                      <div className="flex items-center text-sm text-gray-500">
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {course.duration_hours} hours
-                      </div>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        {course.lessons_count || 24} lessons
-                      </div>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        {course.rating || 4.8} rating
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4">
-                      <p className="text-gray-700 line-clamp-2">
-                        {course.description || "Join this premium course to develop your skills and knowledge in this field."}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Discount Coupon */}
-            <div className="overflow-hidden bg-white shadow-lg rounded-2xl">
-              <div className="p-6 border-b border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900">Discount Coupon</h3>
-                <p className="mt-1 text-sm text-gray-500">Enter your coupon code if you have one</p>
-              </div>
-              <div className="p-6">
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <div className="flex-grow">
-                    <input
-                      type="text"
-                      value={couponCode}
-                      onChange={(e) => {
-                        setCouponCode(e.target.value);
-                        setCouponMessage('');
-                      }}
-                      placeholder="Enter coupon code here"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    {couponMessage && (
-                      <p className={`mt-2 text-sm ${couponMessage.includes('Successfully') ? 'text-green-600' : 'text-red-600'}`}>
-                        {couponMessage}
-                      </p>
-                    )}
-                  </div>
-                  <button
-                    onClick={applyCoupon}
-                    className="px-6 py-3 font-medium text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 whitespace-nowrap"
-                  >
-                    Apply Coupon
-                  </button>
-                </div>
-                
-                {/* Suggested coupons */}
-                <div className="mt-4">
-                  <p className="mb-2 text-sm font-medium text-gray-700">Suggested coupons:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {Object.keys(availableCoupons).slice(0, 3).map(code => (
-                      <span 
-                        key={code}
-                        className="px-3 py-1 text-xs text-blue-800 transition-colors bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200"
-                        onClick={() => {
-                          setCouponCode(code);
-                          setCouponMessage('');
-                        }}
-                      >
-                        {code} - {availableCoupons[code]}% off
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Payment Methods */}
-            <div className="overflow-hidden bg-white shadow-lg rounded-2xl">
-              <div className="p-6 border-b border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900">Payment Method</h3>
-                <p className="mt-1 text-sm text-gray-500">Choose your preferred payment method</p>
-              </div>
-              <div className="p-6">
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  {paymentMethods.map((method) => (
-                    <PaymentMethodCard
-                      key={method.id}
-                      method={method}
-                      selected={selectedPayment === method.id}
-                      onSelect={setSelectedPayment}
-                    />
-                  ))}
-                </div>
-                
-                {/* Payment form (shown when credit card is selected) */}
-                {selectedPayment === 'visa' && (
-                  <div className="p-5 mt-6 border border-gray-200 rounded-xl bg-gray-50">
-                    <h4 className="mb-4 font-medium text-gray-900">Card Information</h4>
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                      <div>
-                        <label className="block mb-1 text-sm font-medium text-gray-700">Card Number</label>
-                        <input 
-                          type="text" 
-                          placeholder="1234 5678 9012 3456" 
-                          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block mb-1 text-sm font-medium text-gray-700">Cardholder Name</label>
-                        <input 
-                          type="text" 
-                          placeholder="Ahmed Mohamed" 
-                          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block mb-1 text-sm font-medium text-gray-700">Expiry Date</label>
-                        <input 
-                          type="text" 
-                          placeholder="MM/YY" 
-                          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block mb-1 text-sm font-medium text-gray-700">Security Code (CVV)</label>
-                        <input 
-                          type="text" 
-                          placeholder="123" 
-                          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-8">
-              <div className="overflow-hidden bg-white shadow-lg rounded-2xl">
-                <div className="p-6 border-b border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900">Order Summary</h3>
-                </div>
-                <div className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Course Price</span>
-                      <span className="font-medium">${course.price.toFixed(2)}</span>
-                    </div>
-                    
-                    {discount > 0 && (
-                      <div className="flex justify-between text-green-600">
-                        <span>Coupon Discount</span>
-                        <span>-${discount.toFixed(2)}</span>
-                      </div>
-                    )}
-                    
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Service Fee</span>
-                      <span className="font-medium">$0.00</span>
-                    </div>
-                    
-                    <div className="pt-4 border-t border-gray-200">
-                      <div className="flex justify-between text-lg font-bold">
-                        <span>Total Amount</span>
-                        <span className="text-blue-600">${finalPrice.toFixed(2)}</span>
-                      </div>
-                      {discount > 0 && (
-                        <p className="mt-2 text-sm text-green-600">
-                          You saved ${discount.toFixed(2)} with discount
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={handlePurchase}
-                    disabled={processing}
-                    className={`w-full mt-6 py-4 px-6 font-bold rounded-xl transition-all duration-300 flex items-center justify-center ${
-                      processing
-                        ? 'bg-gray-400 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-lg hover:shadow-xl transform hover:scale-[1.02]'
-                    }`}
-                  >
-                    {processing ? (
-                      <>
-                        <div className="w-5 h-5 mr-2 border-2 border-white rounded-full border-t-transparent animate-spin"></div>
-                        Processing your order...
-                      </>
-                    ) : (
-                      `Pay Now - $${finalPrice.toFixed(2)}`
-                    )}
-                  </button>
-
-                  <div className="p-4 mt-6 border border-blue-100 rounded-lg bg-blue-50">
-                    <div className="flex">
-                      <svg className="w-5 h-5 text-blue-500 mt-0.5 ml-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <div>
-                        <p className="text-sm font-medium text-blue-800">Money-Back Guarantee</p>
-                        <p className="mt-1 text-xs text-blue-600">Full refund within 30 days if you're not satisfied with the course</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="mt-6 text-xs text-center text-gray-500">
-                    By completing your purchase, you agree to our <a href="#" className="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>
-                  </p>
-                </div>
-              </div>
-              
-              {/* Security Info */}
-              <div className="flex items-center justify-center mt-4 text-sm text-gray-500">
-                <svg className="w-4 h-4 ml-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                </svg>
-                Secure encrypted transactions
-              </div>
-            </div>
-          </div>
+  if (loading) return <LoadingSpinner message="Loading course details..." />;
+  if (!course) return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="text-center">
+        <h2 className="text-2xl font-semibold">Course not found</h2>
+        <p className="mt-2 text-sm text-gray-600">This course may be removed or unavailable.</p>
+        <div className="flex justify-center gap-3 mt-4">
+          <button onClick={() => navigate('/courses')} className="px-4 py-2 text-white bg-blue-600 rounded-md">Browse courses</button>
+          <button onClick={() => navigate('/')} className="px-4 py-2 bg-gray-100 rounded-md">Home</button>
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <main className="py-10 pt-28">
+      <div className="grid max-w-6xl grid-cols-1 gap-8 px-4 mx-auto lg:grid-cols-3">
+        <section className="space-y-6 lg:col-span-2">
+          <div className="overflow-hidden bg-white shadow-lg rounded-2xl">
+            <div className="p-6 md:flex md:gap-6">
+              <img src={course.image} alt={course.title} className="object-cover w-full h-40 rounded-lg md:w-48" />
+              <div className="flex-1 mt-4 md:mt-0">
+                <h1 className="text-2xl font-bold text-gray-900">{course.title}</h1>
+                <p className="mt-2 text-sm text-gray-500">By <strong>{course.instructor.name}</strong></p>
+                <div className="flex flex-wrap gap-3 mt-3 text-sm text-gray-500">
+                  <span className="flex items-center gap-2">⏱ {course.duration_hours}h</span>
+                  <span className="flex items-center gap-2">📚 {course.lessons_count || 24} lessons</span>
+                  <span className="flex items-center gap-2">⭐ {course.rating || 4.8}</span>
+                </div>
+                <p className="mt-4 leading-relaxed text-gray-700">{course.description || 'This premium course helps you master practical skills with hands-on lessons and real-world projects.'}</p>
+              </div>
+            </div>
+            <div className="p-6 border-t border-gray-100 bg-gray-50">
+              <h3 className="text-sm font-medium text-gray-700">What you get</h3>
+              <ul className="grid grid-cols-1 gap-2 mt-3 text-sm text-gray-600 sm:grid-cols-2">
+                <li>Lifetime access</li>
+                <li>Certificate of completion</li>
+                <li>Downloadable resources</li>
+                <li>Community access</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="p-6 overflow-hidden bg-white shadow-lg rounded-2xl">
+            <h3 className="text-lg font-semibold">Apply Coupon</h3>
+            <p className="mt-1 text-sm text-gray-500">Have a promo code? Apply it for a discount.</p>
+            <div className="gap-3 mt-4 sm:flex">
+              <input
+                className="flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter coupon code"
+                value={coupon}
+                onChange={(e) => { setCoupon(e.target.value); setCouponMsg(null); }}
+              />
+              <button onClick={() => { if (!user) return setShowModal(true); applyCoupon(); }} className="px-5 py-3 mt-3 text-white bg-blue-600 rounded-lg sm:mt-0">Apply</button>
+            </div>
+            {couponMsg && (
+              <p className={`mt-3 text-sm ${couponMsg.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>{couponMsg.text}</p>
+            )}
+            <div className="mt-4 text-sm text-gray-600">Suggested: <button onClick={() => setCoupon('LEARNNOW10')} className="text-blue-600 underline">LEARNNOW10</button> • <button onClick={() => setCoupon('WELCOME5')} className="text-blue-600 underline">WELCOME5</button></div>
+          </div>
+        </section>
+
+        <aside className="lg:col-span-1">
+          <div className="sticky space-y-4 top-6">
+            <div className="p-6 shadow-lg bg-gradient-to-br from-white to-blue-50 rounded-2xl">
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="text-sm text-gray-500">Total</div>
+                  <div className="text-2xl font-bold text-gray-900">${total.toFixed(2)}</div>
+                </div>
+                <div className="text-sm text-right text-gray-500">Original <div className="text-gray-400 line-through">${course.price.toFixed(2)}</div></div>
+              </div>
+              {appliedDiscount > 0 && <div className="mt-3 text-sm text-green-600">You saved ${appliedDiscount.toFixed(2)}</div>}
+
+              <div className="mt-5">
+                <h4 className="text-sm font-medium text-gray-700">Payment method</h4>
+                <div className="grid grid-cols-1 gap-3 mt-3">
+                  {paymentMethods.map(m => (
+                    <PaymentMethod key={m.id} {...m} selected={selectedPayment === m.id} onSelect={setSelectedPayment} />
+                  ))}
+                </div>
+              </div>
+
+              {selectedPayment === 'card' && (
+                <div className="p-3 mt-4 bg-white border rounded-md">
+                  <label className="text-xs text-gray-600">Card number</label>
+                  <input className="w-full px-3 py-2 mt-1 border rounded-md" placeholder="1234 5678 9012 3456" />
+                </div>
+              )}
+
+              <button
+                onClick={() => {
+                  if (!user) return setShowModal(true);
+                  handlePay();
+                }}
+                disabled={processing}
+                className={`w-full mt-5 py-3 rounded-lg text-white font-semibold ${processing ? 'bg-gray-400' : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:scale-[1.01]'} transition-all`}
+              >
+                {processing ? 'Processing…' : `Pay ${total.toFixed(2)}`}
+              </button>
+
+              <div className="mt-4 text-xs text-gray-500">Secure transaction • 30-day money-back guarantee</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <RegisterRequiredModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        onSignUp={() => { setShowModal(false); navigate('/sign-up', { state: { from: location.pathname } }); }}
+        onLogin={() => { setShowModal(false); navigate('/login', { state: { from: location.pathname } }); }}
+      />
+    </main>
   );
 };
 

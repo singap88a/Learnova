@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -70,6 +70,8 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
 
 export default function SignUp(props) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectTo = location.state && location.state.from ? location.state.from : "/";
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState("");
   const [passwordError, setPasswordError] = React.useState(false);
@@ -131,7 +133,7 @@ export default function SignUp(props) {
 
       console.log("User signed up:", result.user);
       alert("تم التسجيل بنجاح");
-      navigate("/");
+      navigate(redirectTo);
     } catch (error) {
       console.error("Sign up failed:", error.message);
       alert(error.message);
