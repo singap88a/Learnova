@@ -1,15 +1,17 @@
-import img from "../../../assets/images/cuate.jpg";
 import { IoIosArrowBack } from "react-icons/io";
 
 import { Link } from "react-router";
-import Input from "../../../components/Input/Input.jsx";
-import Button from "../../../components/Button/Button.jsx";
+import Input from "../components/Input/Input.jsx";
+import Button from "../components/Button/Button.jsx";
 function ForgotPassword() {
   return (
     <section className="max-w-4/5 m-auto h-screen flex justify-center items-center my-[70px]">
-      <div className="flex justify-evenly items-center py-10">
-        <div className="w-1/2 lg:block hidden">
-          <img src={img} alt="SignUp" className="w-full h-full" />
+      <div className="flex justify-between items-center py-10 gap-40">
+        <div className="max-w-1/2 lg:flex justify-center items-center hidden overflow-hidden">
+          <iframe
+            className="w-[600px] h-[600px]"
+            src="https://lottie.host/embed/098827f4-9533-4bce-8e1e-7f2669e90c78/l3XEpwVnFK.lottie"
+          ></iframe>
         </div>
         <div className="lg:w-5/12 flex flex-col  p-8">
           {/* title */}
@@ -32,7 +34,7 @@ function ForgotPassword() {
 
           <p className="text-center">
             Didn’t get any mail?{" "}
-            <span className="bg-linear-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
+            <span className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
               Send again
             </span>
           </p>

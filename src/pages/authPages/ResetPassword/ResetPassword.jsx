@@ -1,15 +1,17 @@
-import img from "../../../assets/images/amico.jpg";
 import { IoIosArrowBack } from "react-icons/io";
 
 import { Link } from "react-router";
-import Input from "../../../components/Input/Input.jsx";
-import Button from "../../../components/Button/Button.jsx";
+import Input from "../components/Input/Input.jsx";
+import Button from "../components/Button/Button.jsx";
 function ResetPassword() {
   return (
     <section className="max-w-4/5 m-auto h-screen flex justify-center items-center my-[70px]">
-      <div className="flex justify-evenly items-center py-10">
-        <div className="w-1/2 lg:block hidden">
-          <img src={img} alt="SignUp" className="w-full h-full" />
+      <div className="flex justify-between items-center py-10 gap-20">
+        <div className="max-w-1/2 lg:flex justify-center items-center hidden overflow-hidden">
+          <iframe
+            className="w-[500px] h-[500px]"
+            src="https://lottie.host/embed/b2cf35ed-cc37-4f4f-97e1-c224784a291d/4FJFGeTqu8.lottie"
+          ></iframe>
         </div>
         <div className="lg:w-5/12 flex flex-col  p-8">
           {/* title */}

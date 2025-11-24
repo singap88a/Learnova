@@ -1,14 +1,13 @@
-import img from "../../../assets/images/Frame2.jpg";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 import { Link } from "react-router";
-import Input from "../../../components/Input/Input.jsx";
-import Button from "../../../components/Button/Button.jsx";
+import Input from "../components/Input/Input.jsx";
+import Button from "../components/Button/Button.jsx"
 function SignUp() {
   return (
     <section className="max-w-4/5 m-auto h-screen flex justify-center items-center my-[70px]">
-      <div className="flex justify-evenly items-center py-10">
+      <div className="flex justify-between items-center py-10 gap-20">
         <div className="lg:w-2/5 flex flex-col  p-8">
           {/* title */}
           <h1 className="sm:text-[35px] text-[30px] font-bold  text-center mb-4">
@@ -52,14 +51,14 @@ function SignUp() {
           <Button Content="Log In" className="my-4" />
           {/* or */}
           <div className="relative  my-10">
-            <hr className="bg-linear-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text  font-bold underline underline-offset-2 decoration-[#E522B5] block w-full" />
+            <hr className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text  font-bold underline underline-offset-2 decoration-[#E522B5] block w-full" />
             <p className="text-center text-[#505b61] p-4 bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               Or Sign in with
             </p>
           </div>
           {/* google & facebook */}
           <div className="flex justify-center gap-4 my-4">
-            <button className="p-0.5  bg-linear-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
+            <button className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
               <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
                 <FcGoogle />
                 <span className="text-[15px] text-[#505b61]">
@@ -67,7 +66,7 @@ function SignUp() {
                 </span>
               </div>
             </button>
-            <button className="p-0.5  bg-linear-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
+            <button className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
               <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
                 <FaFacebook className="text-blue-700" />
                 <span className="text-[15px] text-[#505b61]">
@@ -80,13 +79,18 @@ function SignUp() {
           {/* Sign up */}
           <p className="text-center">
             Don’t have account??{" "}
-            <span className="bg-linear-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
-              <Link to="sign-up">Sign Up</Link>
+            <span className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
+              <Link to="/signup">Sign Up</Link>
             </span>
           </p>
         </div>
-        <div className="w-1/2 lg:block hidden">
-          <img src={img} alt="SignUp" className="w-full h-full" />
+        <div className="max-w-1/2 lg:flex justify-center items-center hidden h-screen overflow-hidden">
+          <div>
+            <iframe
+              className="w-[800px] h-[800px]"
+              src="https://lottie.host/embed/e3abe31d-8ce9-4be7-baa2-4c4d6ba7f68a/IG82OuyKmh.lottie"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>

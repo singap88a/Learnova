@@ -1,14 +1,18 @@
-import img from "../../../assets/images/Frame 3.jpg";
-
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
-import Input from "../../../components/Input/Input.jsx";
-import Button from "../../../components/Button/Button.jsx";
+import Input from "../components/Input/Input.jsx";
+import Button from "../components/Button/Button.jsx";
+
 function SignUp() {
   return (
     <section className="max-w-4/5 m-auto h-screen flex justify-center items-center my-[70px]">
-      <div className="flex justify-evenly items-center py-10">
-        <div className="w-1/2 lg:block hidden">
-          <img src={img} alt="SignUp" className="w-full h-full" />
+      <div className="flex justify-between items-center py-10 gap-20">
+        <div className="max-w-1/2 lg:flex justify-center items-center hidden overflow-hidden">
+          <iframe
+            className="w-[650px] h-[650px]"
+            src="https://lottie.host/embed/f1c37590-a81b-4fa4-8eae-fdcef28ad3b1/bh1X0QxqM0.lottie"
+          ></iframe>
         </div>
         <div className="lg:w-2/5 flex flex-col  p-8">
           {/* title */}
@@ -57,13 +61,32 @@ function SignUp() {
               </span>
             </p>
           </div>
+          {/* google & facebook */}
+          <div className="flex justify-center gap-4 my-4">
+            <button className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
+                <FcGoogle />
+                <span className="text-[15px] text-[#505b61]">
+                  Sign in with Google
+                </span>
+              </div>
+            </button>
+            <button className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
+                <FaFacebook className="text-blue-700" />
+                <span className="text-[15px] text-[#505b61]">
+                  Sign in with Facebook
+                </span>
+              </div>
+            </button>
+          </div>
 
           <Button Content="Sign Up" className="my-4" />
 
           {/* login */}
           <p className="text-center">
             Already have account?{" "}
-            <span className="bg-linear-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
+            <span className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
               <Link to="/login">Sign In</Link>
             </span>
           </p>
