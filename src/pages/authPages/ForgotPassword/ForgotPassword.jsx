@@ -1,9 +1,36 @@
 import { IoIosArrowBack } from "react-icons/io";
-
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../components/Input/Input.jsx";
 import Button from "../components/Button/Button.jsx";
+import { useState } from "react";
+import { sendResetEmail } from "../../../Services/authService.jsx";
+
 function ForgotPassword() {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSend = async (e) => {
+    e?.preventDefault();
+    const email = (
+      document.getElementById("Email Address")?.value || ""
+    ).trim();
+    if (!email) {
+      alert("Please enter your email");
+      return;
+    }
+    try {
+      setLoading(true);
+      await sendResetEmail(email);
+      alert("Password reset email sent. Check your inbox.");
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+      alert(err.message || "Failed to send reset email");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="max-w-4/5 m-auto h-screen flex justify-center items-center my-[70px]">
       <div className="flex justify-between items-center py-10 gap-40">
@@ -26,11 +53,20 @@ function ForgotPassword() {
             Enter your email to get the code.
           </p>
           {/* form */}
-          <form action="">
-            <Input type="normal" placeholder="example@gmail.com" />
+          <form onSubmit={handleSend}>
+            <Input
+              type="normal"
+              placeholder="example@gmail.com"
+              title="Email Address"
+            />
+            <div className="mt-4">
+              <Button
+                Content={loading ? "Sending..." : "Send Mail"}
+                className="my-4"
+                onClick={handleSend}
+              />
+            </div>
           </form>
-
-          <Button Content="Send Mail" className="my-4" />
 
           <p className="text-center">
             Didn’t get any mail?{" "}

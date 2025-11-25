@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
 } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyBsZHIBtDRbRAyrwNkXNGxwXWj-3FC2VBM",
   authDomain: "fir-frontend-29b88.firebaseapp.com",
@@ -21,6 +23,8 @@ const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 
 export const auth = getAuth(app);
+export const storage = getStorage(app);
+export const db = getFirestore(app);
 
 // Providers
 export const googleProvider = new GoogleAuthProvider();

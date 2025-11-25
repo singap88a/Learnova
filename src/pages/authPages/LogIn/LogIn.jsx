@@ -1,10 +1,68 @@
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../components/Input/Input.jsx";
-import Button from "../components/Button/Button.jsx"
-function SignUp() {
+import Button from "../components/Button/Button.jsx";
+import { useState } from "react";
+import {
+  signInWithEmail,
+  signInWithGoogle,
+  signInWithFacebook,
+} from "../../../Services/authService.jsx";
+
+function LogIn() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = (
+      document.getElementById("Email Address")?.value || ""
+    ).trim();
+    const password = (document.getElementById("Password")?.value || "").trim();
+    if (!email || !password) {
+      alert("Please provide email and password");
+      return;
+    }
+    try {
+      setLoading(true);
+      await signInWithEmail(email, password);
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+      alert(err.message || "Login failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogle = async () => {
+    try {
+      setLoading(true);
+      await signInWithGoogle();
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+      alert(err.message || "Google sign-in failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleFacebook = async () => {
+    try {
+      setLoading(true);
+      await signInWithFacebook();
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+      alert(err.message || "Facebook sign-in failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="max-w-4/5 m-auto h-screen flex justify-center items-center my-[70px]">
       <div className="flex justify-between items-center py-10 gap-20">
@@ -18,7 +76,7 @@ function SignUp() {
             Continue your personalized learning plan
           </p>
           {/* form */}
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <Input
               type="normal"
               placeholder="example@gmail.com"
@@ -29,6 +87,13 @@ function SignUp() {
               placeholder="*****************"
               title="Password"
             />
+            <div className="mt-4">
+              <Button
+                Content={loading ? "Please wait..." : "Log In"}
+                className="my-4 w-full"
+                onClick={handleSubmit}
+              />
+            </div>
           </form>
           {/* checkbox */}
           <div className="flex items-center justify-between">
@@ -48,7 +113,6 @@ function SignUp() {
             </div>
           </div>
 
-          <Button Content="Log In" className="my-4" />
           {/* or */}
           <div className="relative  my-10">
             <hr className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text  font-bold underline underline-offset-2 decoration-[#E522B5] block w-full" />
@@ -58,7 +122,11 @@ function SignUp() {
           </div>
           {/* google & facebook */}
           <div className="flex justify-center gap-4 my-4">
-            <button className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
+            <button
+              type="button"
+              onClick={handleGoogle}
+              className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]"
+            >
               <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
                 <FcGoogle />
                 <span className="text-[15px] text-[#505b61]">
@@ -66,7 +134,11 @@ function SignUp() {
                 </span>
               </div>
             </button>
-            <button className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]">
+            <button
+              type="button"
+              onClick={handleFacebook}
+              className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]"
+            >
               <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
                 <FaFacebook className="text-blue-700" />
                 <span className="text-[15px] text-[#505b61]">
@@ -97,4 +169,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default LogIn;

@@ -1,6 +1,6 @@
 import { IoIosArrowBack } from "react-icons/io";
 
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import Input from "../components/Input/Input.jsx";
 import Button from "../components/Button/Button.jsx";
 function ResetPassword() {
