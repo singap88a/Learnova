@@ -46,7 +46,7 @@ function ForgotPassword() {
             Forgot Your Password?
           </h1>
           {/* description */}
-          <h2 className="sm:text-2xl text-[18px] font-bold text-[#8864b5]">
+          <h2 className="sm:text-2xl text-[18px] font-bold text-[#9234eb]">
             Enter your Email
           </h2>
           <p className="sm:text-[18px] text-[16px]  text-[#505b61] mb-3">
@@ -70,7 +70,7 @@ function ForgotPassword() {
 
           <p className="text-center">
             Didn’t get any mail?{" "}
-            <span className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
+            <span className="bg-gradient-to-r from-[#2d6aed] to-[#9234eb] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
               Send again
             </span>
           </p>

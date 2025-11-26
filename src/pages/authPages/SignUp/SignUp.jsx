@@ -143,7 +143,7 @@ function SignUp() {
             <button
               type="button"
               onClick={handleGoogle}
-              className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]"
+              className="p-0.5  bg-gradient-to-r rounded-sm from-[#2d6aed] to-[#9234eb]"
             >
               <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
                 <FcGoogle />
@@ -155,7 +155,7 @@ function SignUp() {
             <button
               type="button"
               onClick={handleFacebook}
-              className="p-0.5  bg-gradient-to-r rounded-sm from-[#22B5E5] to-[#E522B5]"
+              className="p-0.5  bg-gradient-to-r rounded-sm from-[#2d6aed] to-[#9234eb]"
             >
               <div className="flex items-center gap-2 px-4 py-2 rounded-sm bg-white hover:bg-gray-100 h-full">
                 <FaFacebook className="text-blue-700" />
@@ -169,7 +169,7 @@ function SignUp() {
           {/* login */}
           <p className="text-center">
             Already have account?{" "}
-            <span className="bg-gradient-to-r from-[#22B5E5] to-[#E522B5] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
+            <span className="bg-gradient-to-r from-[#2d6aed] to-[#9234eb] bg-clip-text text-transparent font-bold underline underline-offset-2 decoration-[#E522B5]">
               <Link to="/login">Sign In</Link>
             </span>
           </p>

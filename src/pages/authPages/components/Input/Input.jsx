@@ -10,7 +10,7 @@ function Input({ type, placeholder, title }) {
     <>
       {type == "normal" ? (
         <div className="flex flex-col mb-4">
-          <label htmlFor={title} className="text-[#8964B5] text-[18px] ">
+          <label htmlFor={title} className="text-[#9234eb] text-[18px] ">
             {title}
           </label>
           <input
@@ -22,7 +22,7 @@ function Input({ type, placeholder, title }) {
         </div>
       ) : (
         <div className="flex flex-col  mb-4">
-          <label htmlFor={title} className="text-[#8964B5] text-[18px] ">
+          <label htmlFor={title} className="text-[#9234eb] text-[18px] ">
             {title}
           </label>
           <div className="relative">

@@ -19,7 +19,7 @@ function ResetPassword() {
             Reset Your Password?
           </h1>
           {/* description */}
-          <h2 className="sm:text-2xl text-[18px] font-bold text-[#8864b5]">
+          <h2 className="sm:text-2xl text-[18px] font-bold text-[#9234eb]">
             Enter new password
           </h2>
           <p className="sm:text-[18px] text-[12px]  text-[#505b61] mb-3">

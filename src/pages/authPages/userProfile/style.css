@@ -1,0 +1,6 @@
+.disabled :hover:not(.disabled) {
+  cursor: not-allowed !important;
+}
+input[disabled] {
+  cursor: not-allowed !important;
+}

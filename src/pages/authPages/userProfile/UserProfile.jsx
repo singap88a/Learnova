@@ -1,6 +1,7 @@
 import { useEffect, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth.js";
+import "./style.css";
 import {
   updateUserProfile,
   updateUserEmail,
@@ -9,7 +10,9 @@ import {
   saveUserData,
   getUserData,
 } from "../../../Services/authService.jsx";
-
+import RightColumn from "./RightColumn.jsx";
+import LeftColumn from "./LeftColumn.jsx";
+import HeaderSection from "./HeaderSection.jsx";
 const initialState = {
   displayName: "",
   email: "",
@@ -18,6 +21,7 @@ const initialState = {
   bio: "",
   status: null, // { type: 'success'|'error'|'warning', message: string }
   saving: false,
+  locked: true,
 };
 
 function reducer(state, action) {
@@ -50,6 +54,8 @@ function reducer(state, action) {
         phone: action.payload.phone || "",
         bio: action.payload.bio || "",
       };
+    case "SET_LOCKED":
+      return { ...state, locked: action.payload };
     default:
       return state;
   }
@@ -104,11 +110,7 @@ export default function ProfilePage() {
       await updateUserProfile({ displayName, photoURL });
 
       // Save extra profile fields to Firestore
-      try {
-        await saveUserData(user.uid, { phone, bio });
-      } catch (err) {
-        console.error("Failed to save extra user data:", err);
-      }
+      await saveUserData(user.uid, { phone, bio });
 
       // Update email if changed
       if (email !== user.email) {
@@ -191,8 +193,8 @@ export default function ProfilePage() {
           displayName: user.displayName,
           email: user.email,
           photoURL: user.photoURL,
-          phone: extra?.phone,
-          bio: extra?.bio,
+          phone: extra && typeof extra.phone === "string" ? extra.phone : "",
+          bio: extra && typeof extra.bio === "string" ? extra.bio : "",
         },
       });
     } catch (err) {
@@ -215,221 +217,34 @@ export default function ProfilePage() {
     navigate("/login");
   };
 
+  const handleLocked = () => {
+    dispatch({ type: "SET_LOCKED", payload: !state.locked });
+  };
+
   return (
-    <section className="bg-gray-200 min-h-screen mt-[70px]">
-      <div className="container mx-auto py-12 px-4">
-        {/* Breadcrumb */}
-        <div className="mb-4">
-          <nav className="bg-white rounded-lg p-3 mb-4">
-            <ol className="flex items-center space-x-2 text-sm">
-              <li>
-                <a href="#" className="text-blue-600 hover:text-blue-800">
-                  Home
-                </a>
-              </li>
-              <li className="text-gray-400">/</li>
-              <li>
-                <a href="#" className="text-blue-600 hover:text-blue-800">
-                  User
-                </a>
-              </li>
-              <li className="text-gray-400">/</li>
-              <li className="text-gray-600">User Profile</li>
-            </ol>
-          </nav>
-        </div>
+    <section className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen pt-20 pb-12">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Header with Breadcrumb */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-          {/* Left Column */}
-          <div className="lg:col-span-4">
-            {/* Profile Card */}
-            <div className="bg-white rounded-lg shadow mb-4">
-              <div className="p-6 text-center">
-                <img
-                  src={
-                    state.photoURL ||
-                    user?.photoURL ||
-                    "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                  }
-                  alt="avatar"
-                  className="rounded-full w-36 h-36 mx-auto mb-4 object-cover"
-                />
+        <HeaderSection state={state} />
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
+          {/* Left Column - Profile Card */}
+          <LeftColumn
+            state={state}
+            user={user}
+            handlePhotoChange={handlePhotoChange}
+            handleLogout={handleLogout}
+          />
 
-                <div className="mt-2 mb-4">
-                  <label className="block text-sm text-gray-600 mb-1">
-                    Change Photo
-                  </label>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handlePhotoChange}
-                  />
-                </div>
-
-                <p className="text-gray-600 mb-1">
-                  {state.displayName || "No name provided"}
-                </p>
-                <p className="text-gray-600 mb-4">
-                  {state.email || user?.email || "No email provided"}
-                </p>
-
-                <div className="flex justify-center gap-2 mb-2">
-                  <button
-                    onClick={handleLogout}
-                    className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="lg:col-span-8">
-            {/* Info Card - editable */}
-            <div className="bg-white rounded-lg shadow mb-4">
-              <div className="p-6">
-                {!user ? (
-                  <div className="text-center py-8">
-                    <p className="text-gray-700 mb-2">
-                      No account information available.
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Please sign in to view or edit your profile.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSave}>
-                    <div className="grid grid-cols-3 gap-4 items-center mb-4">
-                      <div className="text-gray-700 font-medium">Full Name</div>
-                      <div className="col-span-2">
-                        <input
-                          value={state.displayName}
-                          onChange={(e) =>
-                            dispatch({
-                              type: "SET_FIELD",
-                              field: "displayName",
-                              value: e.target.value,
-                            })
-                          }
-                          className="w-full px-3 py-2 border rounded"
-                        />
-                      </div>
-                    </div>
-
-                    <hr className="my-4 border-gray-200" />
-
-                    <div className="grid grid-cols-3 gap-4 items-center mb-4">
-                      <div className="text-gray-700 font-medium">Email</div>
-                      <div className="col-span-2">
-                        <input
-                          value={state.email}
-                          onChange={(e) =>
-                            dispatch({
-                              type: "SET_FIELD",
-                              field: "email",
-                              value: e.target.value,
-                            })
-                          }
-                          className="w-full px-3 py-2 border rounded"
-                        />
-                      </div>
-                    </div>
-
-                    <hr className="my-4 border-gray-200" />
-
-                    <div className="grid grid-cols-3 gap-4 items-center mb-4">
-                      <div className="text-gray-700 font-medium">Photo URL</div>
-                      <div className="col-span-2">
-                        <input
-                          value={state.photoURL}
-                          onChange={(e) =>
-                            dispatch({
-                              type: "SET_FIELD",
-                              field: "photoURL",
-                              value: e.target.value,
-                            })
-                          }
-                          className="w-full px-3 py-2 border rounded"
-                        />
-                      </div>
-                    </div>
-
-                    <hr className="my-4 border-gray-200" />
-
-                    <div className="grid grid-cols-3 gap-4 items-center mb-4">
-                      <div className="text-gray-700 font-medium">Phone</div>
-                      <div className="col-span-2">
-                        <input
-                          value={state.phone}
-                          onChange={(e) =>
-                            dispatch({
-                              type: "SET_FIELD",
-                              field: "phone",
-                              value: e.target.value,
-                            })
-                          }
-                          className="w-full px-3 py-2 border rounded"
-                          placeholder="e.g. +1 555-123-4567"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-start mb-4">
-                      <div className="text-gray-700 font-medium">Bio</div>
-                      <div className="col-span-2">
-                        <textarea
-                          value={state.bio}
-                          onChange={(e) =>
-                            dispatch({
-                              type: "SET_FIELD",
-                              field: "bio",
-                              value: e.target.value,
-                            })
-                          }
-                          className="w-full px-3 py-2 border rounded"
-                          rows={4}
-                          placeholder="Short bio about yourself"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-end gap-2 mt-4">
-                      <button
-                        type="button"
-                        onClick={handleReset}
-                        className="px-4 py-2 border rounded"
-                      >
-                        Reset
-                      </button>
-                      <button
-                        type="submit"
-                        disabled={state.saving}
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                      >
-                        {state.saving ? "Saving..." : "Save Changes"}
-                      </button>
-                    </div>
-                  </form>
-                )}
-
-                {state.status && (
-                  <div
-                    className={`mt-4 p-3 rounded ${
-                      state.status.type === "error"
-                        ? "bg-red-100 text-red-800"
-                        : state.status.type === "warning"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : "bg-green-100 text-green-800"
-                    }`}
-                  >
-                    {state.status.message}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          {/* Right Column - Edit Form */}
+          <RightColumn
+            user={user}
+            state={state}
+            dispatch={dispatch}
+            handleSave={handleSave}
+            handleReset={handleReset}
+            handleLocked={handleLocked}
+          />
         </div>
       </div>
     </section>
