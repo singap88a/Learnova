@@ -26,8 +26,8 @@ const CoursesSection = () => {
   }));
 
   return (
-    <section className="px-20 py-20">
-      <div className="container px-4 mx-auto">
+    <section className="px-4 py-20 md:px-20">
+      <div className="container mx-auto">
         {/* Header Section */}
         <div className="mb-16 text-center" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 text-sm font-medium text-blue-700 bg-blue-100 rounded-full">

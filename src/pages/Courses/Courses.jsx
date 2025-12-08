@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CourseCard from '../../components/Courses/CourseCard';
 import coursesData from '../../data/courses.json';
 import { Search, Filter, Grid, List, ChevronDown, X } from 'lucide-react';
+import CoursesHero from '../../assets/Courses_hero.jpg';
 
 const Courses = () => {
   const courses = coursesData.courses;
@@ -54,8 +55,8 @@ const Courses = () => {
   return (
     <div className="min-h-screen py-20">
       {/* Header Section */}
-      <div className="relative z-20 py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700">
-        {/* <div className="absolute inset-0 bg-black/20"></div> */}
+      <div className="relative z-20 py-20" style={{ backgroundImage: `url(${CoursesHero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">

@@ -62,7 +62,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden text-white ">
       {/* Background - Same as Features Section */}
-      <div className="relative px-20 overflow-hidden ">
+      <div className="relative px-4 overflow-hidden md:px-20">
  
 
         {/* Content */}

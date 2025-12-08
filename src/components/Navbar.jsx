@@ -9,7 +9,8 @@ import {
   ChevronDown,
   Home,
   Info,
-  Phone
+  Phone,
+  Search
 } from "lucide-react";
 import logo from "../assets/logo.png";
 
@@ -54,7 +55,7 @@ const Navbar = () => {
         ? "bg-white/95 backdrop-blur-xl shadow-2xl shadow-blue-500/10 border-b border-gray-100" 
         : "bg-white/90 backdrop-blur-lg"
     }`}>
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className="mx-auto md:px-20 sm:px-6 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <div className="flex items-center">
@@ -68,7 +69,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-1">
+          <div className="hidden md:flex md:items-center md:space-x-1">
             {navItems.map((item) => (
               <div key={item.path} className="relative">
                 {item.dropdown ? (
@@ -125,7 +126,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Actions */}
-          <div className="items-center hidden space-x-3 lg:flex">
+          <div className="items-center hidden space-x-3 md:flex">
             {/* Auth Buttons */}
             <div className="flex items-center gap-2 ml-4">
               <Link
@@ -144,7 +145,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-3 text-gray-700 transition-all duration-300 rounded-2xl hover:text-blue-600 hover:bg-gray-100 focus:outline-none"
@@ -163,7 +164,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="border-t border-gray-100 shadow-2xl bg-white/95 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-gray-100 shadow-2xl bg-white/95 backdrop-blur-xl md:hidden">
           <div className="px-4 py-6 space-y-4">
             {/* Mobile Search */}
             <div className="relative mb-4">

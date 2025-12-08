@@ -16,6 +16,7 @@ import {
   Home,
   Info,
   Phone,
+  Search,
 } from "lucide-react";
 import logo from "../assets/logo.png";
 

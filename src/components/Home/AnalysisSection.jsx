@@ -3,8 +3,8 @@ import { TrendingUp, Clock, Award } from 'lucide-react';
 
 const AnalysisSection = () => {
   return (
-    <div className="px-20 py-20">
-      <div className="container px-4 mx-auto">
+    <div className="px-4 py-20 md:px-20">
+      <div className="container mx-auto">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div data-aos="fade-right">
             <img
