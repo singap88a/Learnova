@@ -23,7 +23,7 @@
           "title": "Introduction and Project Structure",
           "type": "video",
           "duration_min": 18,
-          "video_url": "https://youtu.be/QhSXNY8sy_0?si=j94OXCpHgzIT2A0q",
+          "video_url": "https://www.youtube.com/watch?v=Ke90Tje7VS0",
           "resources": ["project-setup.zip", "architecture.md"]
         },
         {
@@ -31,7 +31,7 @@
           "title": "Advanced Hooks: useReducer, useCallback, and useMemo",
           "type": "video",
           "duration_min": 40,
-          "video_url": "https://example.com/videos/c_001_l02.mp4",
+          "video_url": "https://www.youtube.com/watch?v=w7ejDZ8SWvO",
           "resources": ["hooks-cheatsheet.pdf"]
         },
         {
@@ -39,7 +39,7 @@
           "title": "Code Splitting and Lazy Loading",
           "type": "video",
           "duration_min": 28,
-          "video_url": "https://example.com/videos/c_001_l03.mp4",
+          "video_url": "https://www.youtube.com/watch?v=SqcY0GlETPk",
           "resources": []
         },
         {
@@ -47,7 +47,7 @@
           "title": "Performance Profiling and Render Optimization",
           "type": "video",
           "duration_min": 35,
-          "video_url": "https://example.com/videos/c_001_l04.mp4",
+          "video_url": "https://www.youtube.com/watch?v=O6P86uwfdR0",
           "resources": ["perf-checklist.md"]
         },
         {
@@ -55,7 +55,7 @@
           "title": "State Management: Context vs Redux vs Zustand",
           "type": "video",
           "duration_min": 50,
-          "video_url": "https://example.com/videos/c_001_l05.mp4",
+          "video_url": "https://www.youtube.com/watch?v=35lXWvCuM8o",
           "resources": ["state-comparison-table.csv"]
         },
         {
@@ -63,7 +63,7 @@
           "title": "Testing: Jest and React Testing Library",
           "type": "video",
           "duration_min": 60,
-          "video_url": "https://example.com/videos/c_001_l06.mp4",
+          "video_url": "https://www.youtube.com/watch?v=8Xwq35cPwYg",
           "resources": ["tests-examples.zip"]
         },
         {
@@ -71,7 +71,7 @@
           "title": "TypeScript with React (Advanced Practices)",
           "type": "video",
           "duration_min": 55,
-          "video_url": "https://example.com/videos/c_001_l07.mp4",
+          "video_url": "https://www.youtube.com/watch?v=WlxcujsvcIY",
           "resources": ["typescript-guidelines.md"]
         },
         {
@@ -79,7 +79,7 @@
           "title": "SSR and SSG with Next.js - Comparison and Workshop",
           "type": "video",
           "duration_min": 70,
-          "video_url": "https://example.com/videos/c_001_l08.mp4",
+          "video_url": "https://www.youtube.com/watch?v=Sklc_fQBmcs",
           "resources": ["nextjs-starter.zip"]
         },
         {
@@ -87,7 +87,7 @@
           "title": "CI/CD and Deploying to Vercel/Netlify",
           "type": "video",
           "duration_min": 30,
-          "video_url": "https://example.com/videos/c_001_l09.mp4",
+          "video_url": "https://www.youtube.com/watch?v=MxfxiR8TVNU",
           "resources": ["ci-templates.yml"]
         },
         {
@@ -95,7 +95,7 @@
           "title": "Real-world Performance Analysis and Monitoring Tools",
           "type": "video",
           "duration_min": 27,
-          "video_url": "https://example.com/videos/c_001_l10.mp4",
+          "video_url": "https://www.youtube.com/watch?v=RDOogsAz5Nc",
           "resources": ["monitoring-tools.md"]
         },
         {
@@ -103,7 +103,7 @@
           "title": "Practical Project: Building a Course Management App",
           "type": "project",
           "duration_min": 120,
-          "video_url": "https://example.com/videos/c_001_l11.mp4",
+          "video_url": "https://www.youtube.com/watch?v=NZKUirTtxcg",
           "resources": ["project-starter.zip"]
         },
         {
@@ -111,7 +111,7 @@
           "title": "Conclusion and Professional Career Tips",
           "type": "video",
           "duration_min": 15,
-          "video_url": "https://example.com/videos/c_001_l12.mp4",
+          "video_url": "https://www.youtube.com/watch?v=bMknfKXIFA8",
           "resources": []
         }
       ],
@@ -191,7 +191,7 @@
           "title": "Introduction and Development Environment",
           "type": "video",
           "duration_min": 12,
-          "video_url": "https://example.com/videos/c_002_l01.mp4",
+          "video_url": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
           "resources": ["setup-guide.pdf"]
         },
         {
@@ -199,7 +199,7 @@
           "title": "Basics: Variables, Types, and Control Flow",
           "type": "video",
           "duration_min": 35,
-          "video_url": "https://example.com/videos/c_002_l02.mp4",
+          "video_url": "https://www.youtube.com/watch?v=hdI2bqOjy3c",
           "resources": []
         },
         {
@@ -207,7 +207,7 @@
           "title": "Functions, Scope, and Closures",
           "type": "video",
           "duration_min": 28,
-          "video_url": "https://example.com/videos/c_002_l03.mp4",
+          "video_url": "https://www.youtube.com/watch?v=gigtS_5KOqo",
           "resources": ["closures-examples.zip"]
         },
         {
@@ -215,7 +215,7 @@
           "title": "ES6+: Arrow Functions, Destructuring, Modules",
           "type": "video",
           "duration_min": 40,
-          "video_url": "https://example.com/videos/c_002_l04.mp4",
+          "video_url": "https://www.youtube.com/watch?v=NCwa_xi0Uuc",
           "resources": ["es6-cheatsheet.pdf"]
         },
         {
@@ -223,7 +223,7 @@
           "title": "Object-Oriented Programming in JS and Prototypes",
           "type": "video",
           "duration_min": 38,
-          "video_url": "https://example.com/videos/c_002_l05.mp4",
+          "video_url": "https://www.youtube.com/watch?v=PFmuCDHHpwk",
           "resources": []
         },
         {
@@ -231,7 +231,7 @@
           "title": "Asynchronous JavaScript: Callbacks, Promises, Async/Await",
           "type": "video",
           "duration_min": 50,
-          "video_url": "https://example.com/videos/c_002_l06.mp4",
+          "video_url": "https://www.youtube.com/watch?v=PoRJizFvM7s",
           "resources": ["async-patterns.md"]
         },
         {
@@ -239,7 +239,7 @@
           "title": "DOM Manipulation and Events",
           "type": "video",
           "duration_min": 42,
-          "video_url": "https://example.com/videos/c_002_l07.mp4",
+          "video_url": "https://www.youtube.com/watch?v=0ik6X4DJKCc",
           "resources": []
         },
         {
@@ -247,7 +247,7 @@
           "title": "Network Handling: Fetch and WebSockets",
           "type": "video",
           "duration_min": 33,
-          "video_url": "https://example.com/videos/c_002_l08.mp4",
+          "video_url": "https://www.youtube.com/watch?v=cuEtnrL9-H0",
           "resources": []
         },
         {
@@ -255,7 +255,7 @@
           "title": "Design Patterns in JavaScript",
           "type": "video",
           "duration_min": 45,
-          "video_url": "https://example.com/videos/c_002_l09.mp4",
+          "video_url": "https://www.youtube.com/watch?v=fbuyliVlHnY",
           "resources": ["patterns-examples.zip"]
         },
         {
@@ -263,7 +263,7 @@
           "title": "Practical Project: Simple Canvas Game",
           "type": "project",
           "duration_min": 180,
-          "video_url": "https://example.com/videos/c_002_l10.mp4",
+          "video_url": "https://www.youtube.com/watch?v=eI9idPTT0c4",
           "resources": ["canvas-starter.zip"]
         },
         {
@@ -271,7 +271,7 @@
           "title": "Debugging and Performance Tips",
           "type": "video",
           "duration_min": 26,
-          "video_url": "https://example.com/videos/c_002_l11.mp4",
+          "video_url": "https://www.youtube.com/watch?v=AX7uybwukkk",
           "resources": []
         },
         {
@@ -279,7 +279,7 @@
           "title": "Deploying Lightweight Interfaces with Service Workers",
           "type": "video",
           "duration_min": 30,
-          "video_url": "https://example.com/videos/c_002_l12.mp4",
+          "video_url": "https://www.youtube.com/watch?v=ksXwaWHCW6k",
           "resources": []
         },
         {
@@ -287,7 +287,7 @@
           "title": "Security Basics in Web Applications",
           "type": "video",
           "duration_min": 22,
-          "video_url": "https://example.com/videos/c_002_l13.mp4",
+          "video_url": "https://www.youtube.com/watch?v=4vz97V4NCtY",
           "resources": ["security-checklist.md"]
         },
         {
@@ -295,7 +295,7 @@
           "title": "Working with npm Packages and Build Tools",
           "type": "video",
           "duration_min": 34,
-          "video_url": "https://example.com/videos/c_002_l14.mp4",
+          "video_url": "https://www.youtube.com/watch?v=jHDhaSSKmB0",
           "resources": []
         },
         {
@@ -303,7 +303,7 @@
           "title": "Testing: Unit and Integration",
           "type": "video",
           "duration_min": 40,
-          "video_url": "https://example.com/videos/c_002_l15.mp4",
+          "video_url": "https://www.youtube.com/watch?v=r9HdHUE0COE",
           "resources": ["testing-examples.zip"]
         },
         {
@@ -311,7 +311,7 @@
           "title": "User Experience Optimization and Accessibility",
           "type": "video",
           "duration_min": 25,
-          "video_url": "https://example.com/videos/c_002_l16.mp4",
+          "video_url": "https://www.youtube.com/watch?v=e2nkq3h1P68",
           "resources": []
         },
         {
@@ -319,7 +319,7 @@
           "title": "Final Course Project: Complete SPA Application",
           "type": "project",
           "duration_min": 240,
-          "video_url": "https://example.com/videos/c_002_l17.mp4",
+          "video_url": "https://www.youtube.com/watch?v=jaVNP3nIAv0",
           "resources": ["spa-starter.zip"]
         },
         {
@@ -327,7 +327,7 @@
           "title": "Continuous Learning Tips and Career Development Path",
           "type": "video",
           "duration_min": 15,
-          "video_url": "https://example.com/videos/c_002_l18.mp4",
+          "video_url": "https://www.youtube.com/watch?v=RVFAyFWO4go",
           "resources": []
         }
       ],
@@ -401,7 +401,7 @@
           "title": "Design Principles and UX Basics",
           "type": "video",
           "duration_min": 20,
-          "video_url": "https://example.com/videos/c_003_l01.mp4",
+          "video_url": "https://www.youtube.com/watch?v=B-ytMSuwbf8",
           "resources": ["design-principles.pdf"]
         },
         {
@@ -409,7 +409,7 @@
           "title": "HTML Deep Dive into Semantic Elements",
           "type": "video",
           "duration_min": 22,
-          "video_url": "https://example.com/videos/c_003_l02.mp4",
+          "video_url": "https://www.youtube.com/watch?v=kGW8Al_cga4",
           "resources": []
         },
         {
@@ -417,7 +417,7 @@
           "title": "CSS Grid - Building Advanced Layouts",
           "type": "video",
           "duration_min": 35,
-          "video_url": "https://example.com/videos/c_003_l03.mp4",
+          "video_url": "https://www.youtube.com/watch?v=EiNiSFIPIQE",
           "resources": ["grid-examples.zip"]
         },
         {
@@ -425,7 +425,7 @@
           "title": "Flexbox in Detail and Popular Patterns",
           "type": "video",
           "duration_min": 30,
-          "video_url": "https://example.com/videos/c_003_l04.mp4",
+          "video_url": "https://www.youtube.com/watch?v=u044iM9xsWU",
           "resources": []
         },
         {
@@ -433,7 +433,7 @@
           "title": "Color Systems and Typography for Professional Interfaces",
           "type": "video",
           "duration_min": 28,
-          "video_url": "https://example.com/videos/c_003_l05.mp4",
+          "video_url": "https://www.youtube.com/watch?v=OXGznpKZ_sA",
           "resources": ["typography-guide.pdf"]
         },
         {
@@ -441,7 +441,7 @@
           "title": "Responsive Design and Mobile First",
           "type": "video",
           "duration_min": 32,
-          "video_url": "https://example.com/videos/c_003_l06.mp4",
+          "video_url": "https://www.youtube.com/watch?v=srvUrASNj0s",
           "resources": []
         },
         {
@@ -449,7 +449,7 @@
           "title": "CSS Performance Optimization and Reducing Reflow/Repaint",
           "type": "video",
           "duration_min": 20,
-          "video_url": "https://example.com/videos/c_003_l07.mp4",
+          "video_url": "https://www.youtube.com/watch?v=Qhaz36TZG5Y",
           "resources": []
         },
         {
@@ -457,7 +457,7 @@
           "title": "Accessibility and ARIA Best Practices",
           "type": "video",
           "duration_min": 25,
-          "video_url": "https://example.com/videos/c_003_l08.mp4",
+          "video_url": "https://www.youtube.com/watch?v=1A6SrPwmGpg",
           "resources": ["accessibility-checklist.md"]
         },
         {
@@ -465,7 +465,7 @@
           "title": "Designing Component System with HTML/CSS",
           "type": "video",
           "duration_min": 40,
-          "video_url": "https://example.com/videos/c_003_l09.mp4",
+          "video_url": "https://www.youtube.com/watch?v=yfoY53QXEnI",
           "resources": ["component-library.zip"]
         },
         {
@@ -473,7 +473,7 @@
           "title": "Practical Project: Professional Landing Page",
           "type": "project",
           "duration_min": 150,
-          "video_url": "https://example.com/videos/c_003_l10.mp4",
+          "video_url": "https://www.youtube.com/watch?v=p0bGHP-PXD4",
           "resources": ["landing-starter.zip"]
         }
       ],
@@ -540,7 +540,7 @@
           "title": "System Requirements and Database Design",
           "type": "video",
           "duration_min": 30,
-          "video_url": "https://example.com/videos/c_004_l01.mp4",
+          "video_url": "https://www.youtube.com/watch?v=lauywdXKEXI",
           "resources": ["db-schema.sql"]
         },
         {
@@ -548,7 +548,7 @@
           "title": "Auth, JWT, and Refresh Tokens",
           "type": "video",
           "duration_min": 35,
-          "video_url": "https://example.com/videos/c_004_l02.mp4",
+          "video_url": "https://www.youtube.com/watch?v=mbsmsi7l3r4",
           "resources": []
         },
         {
@@ -556,7 +556,7 @@
           "title": "Designing API for Subscription Management",
           "type": "video",
           "duration_min": 40,
-          "video_url": "https://example.com/videos/c_004_l03.mp4",
+          "video_url": "https://www.youtube.com/watch?v=0oXYLzuucwE",
           "resources": ["api-spec.yaml"]
         },
         {
@@ -564,7 +564,7 @@
           "title": "Payment Gateway Integration: Stripe Example",
           "type": "video",
           "duration_min": 50,
-          "video_url": "https://example.com/videos/c_004_l04.mp4",
+          "video_url": "https://www.youtube.com/watch?v=1r-F3FIONl8",
           "resources": ["stripe-integration-guide.md"]
         },
         {
@@ -572,7 +572,7 @@
           "title": "Access Permission Management and Roles",
           "type": "video",
           "duration_min": 32,
-          "video_url": "https://example.com/videos/c_004_l05.mp4",
+          "video_url": "https://www.youtube.com/watch?v=jciukrBEw48",
           "resources": []
         },
         {
@@ -580,7 +580,7 @@
           "title": "Webhooks and Event Processing",
           "type": "video",
           "duration_min": 28,
-          "video_url": "https://example.com/videos/c_004_l06.mp4",
+          "video_url": "https://www.youtube.com/watch?v=41NOoEz3Tzc",
           "resources": []
         },
         {
@@ -588,7 +588,7 @@
           "title": "Sending Emails and Payment Notifications",
           "type": "video",
           "duration_min": 25,
-          "video_url": "https://example.com/videos/c_004_l07.mp4",
+          "video_url": "https://www.youtube.com/watch?v=nF9g1825mwk",
           "resources": []
         },
         {
@@ -596,7 +596,7 @@
           "title": "Invoice Management and Financial Records",
           "type": "video",
           "duration_min": 30,
-          "video_url": "https://example.com/videos/c_004_l08.mp4",
+          "video_url": "https://www.youtube.com/watch?v=Ud5xKCYQTjM",
           "resources": []
         },
         {
@@ -604,7 +604,7 @@
           "title": "Admin Panel for Administrators",
           "type": "video",
           "duration_min": 40,
-          "video_url": "https://example.com/videos/c_004_l09.mp4",
+          "video_url": "https://www.youtube.com/watch?v=MBaw_6cPmAw",
           "resources": ["admin-template.zip"]
         },
         {
@@ -612,7 +612,7 @@
           "title": "Security Strategies and Backups",
           "type": "video",
           "duration_min": 22,
-          "video_url": "https://example.com/videos/c_004_l10.mp4",
+          "video_url": "https://www.youtube.com/watch?v=vywx2Abbxh8",
           "resources": []
         },
         {
@@ -620,7 +620,7 @@
           "title": "Integration Tests and Security Testing",
           "type": "video",
           "duration_min": 30,
-          "video_url": "https://example.com/videos/c_004_l11.mp4",
+          "video_url": "https://www.youtube.com/watch?v=FgnxcUQ5vho",
           "resources": []
         },
         {
@@ -628,7 +628,7 @@
           "title": "Launch Preparation: Scaling and Monitoring",
           "type": "video",
           "duration_min": 27,
-          "video_url": "https://example.com/videos/c_004_l12.mp4",
+          "video_url": "https://www.youtube.com/watch?v=ZX3qt0UWifc",
           "resources": []
         },
         {
@@ -636,7 +636,7 @@
           "title": "Practical Project: Building Complete Subscription System",
           "type": "project",
           "duration_min": 200,
-          "video_url": "https://example.com/videos/c_004_l13.mp4",
+          "video_url": "https://www.youtube.com/watch?v=72iEz5iopqQ",
           "resources": ["membership-starter.zip"]
         },
         {
@@ -644,7 +644,7 @@
           "title": "Maintenance Recommendations and Future Feature Development",
           "type": "video",
           "duration_min": 15,
-          "video_url": "https://example.com/videos/c_004_l14.mp4",
+          "video_url": "https://www.youtube.com/watch?v=RBSGKlAvoiM",
           "resources": []
         }
       ],

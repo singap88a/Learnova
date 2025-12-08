@@ -4,94 +4,35 @@ import LessonNavigation from './LessonNavigation';
 
 const VideoPlayer = ({ lesson, formatDuration, lessons, onLessonChange }) => {
   const currentIndex = lessons.findIndex(l => l.lesson_id === lesson.lesson_id);
-  
+
+  const getYouTubeId = (url) => {
+    if (!url) return null;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  const videoId = getYouTubeId(lesson.video_url);
+
   return (
     <div className="overflow-hidden bg-white border shadow-xl rounded-2xl border-slate-200/60">
       
       {/* Video Player Section */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 aspect-video">
-        {/* Video Placeholder */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <div className="relative mb-8">
-              <div className="flex items-center justify-center w-32 h-32 mx-auto mb-6 transition-all duration-500 transform border shadow-2xl cursor-pointer bg-white/10 backdrop-blur-lg rounded-3xl hover:scale-110 hover:bg-white/20 border-white/20 shadow-black/30">
-                <svg className="w-16 h-16 text-white transition-transform transform hover:scale-110" 
-                     fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <div className="absolute inset-0 border-4 border-white/30 rounded-3xl animate-ping"></div>
-            </div>
-            
-            <h3 className="mb-4 text-4xl font-bold tracking-tight text-transparent bg-gradient-to-r from-white to-slate-200 bg-clip-text">
-              {lesson.title}
-            </h3>
-            <p className="mb-8 text-xl font-light text-slate-300">
-              Click to start this lesson
-            </p>
-            
-            <button className="px-12 py-4 font-semibold text-white transition-all duration-300 transform border shadow-2xl bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-blue-500/30 hover:scale-105 hover:shadow-3xl hover:from-blue-700 hover:to-purple-700 border-white/20">
-              Start Learning
-            </button>
+      <div className="relative bg-slate-900 aspect-video">
+        {videoId ? (
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title={lesson.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-white">
+            <p>No video available</p>
           </div>
-        </div>
-
-        {/* Video Controls Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-          <div className="flex items-center justify-between">
-            {/* Left Controls */}
-            <div className="flex items-center space-x-4">
-              <button className="p-3.5 bg-white/10 hover:bg-white/20 rounded-xl transition-all 
-                               duration-300 hover:scale-110 backdrop-blur-sm border border-white/20">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              
-              <button className="p-4 transition-all duration-300 border bg-white/20 hover:bg-white/30 rounded-xl hover:scale-110 backdrop-blur-sm border-white/30">
-                <svg className="text-white w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                </svg>
-              </button>
-              
-              <button className="p-3.5 bg-white/10 hover:bg-white/20 rounded-xl transition-all 
-                               duration-300 hover:scale-110 backdrop-blur-sm border border-white/20">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Progress Bar */}
-            <div className="flex-1 max-w-2xl mx-8">
-              <div className="flex items-center space-x-4">
-                <span className="text-sm font-medium text-white/80">0:00</span>
-                <div className="flex-1 h-2 overflow-hidden rounded-full bg-white/30">
-                  <div className="w-1/4 h-2 rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 shadow-blue-500/50"></div>
-                </div>
-                <span className="text-sm font-medium text-white/80">{formatDuration(lesson.duration_min)}</span>
-              </div>
-            </div>
-
-            {/* Right Controls */}
-            <div className="flex items-center space-x-3">
-              <button className="p-3 transition-all duration-300 border bg-white/10 hover:bg-white/20 rounded-xl hover:scale-110 backdrop-blur-sm border-white/20">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                </svg>
-              </button>
-              
-              <button className="p-3 transition-all duration-300 border bg-white/10 hover:bg-white/20 rounded-xl hover:scale-110 backdrop-blur-sm border-white/20">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M15.536 8.464a5 5 0 010 7.072m2.828-2.828a9 9 0 010-12.728M9.172 9.172a3 3 0 000 4.243m2.828-2.828a5 5 0 010 7.07" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* Lesson Content */}
