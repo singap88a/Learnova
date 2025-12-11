@@ -9,7 +9,7 @@ import Courses from "./pages/Courses/Courses";
 import CourseDetails from "./pages/Courses/CourseDetails/CourseDetails.jsx";
 import PurchaseCourse from "./pages/Courses/PurchaseCourse";
 import PurchaseSuccess from "./pages/Courses/PurchaseSuccess";
-import Lessons from "./pages/Courses/lessons/Lessons";
+import Lessons from "./pages/Courses/Lessons/Lessons";
 import MyCourses from "./pages/MyCourses";
 import Instructors from "./pages/Instructors/Instructors";
 import InstructorDetails from "./pages/Instructors/InstructorDetails";
